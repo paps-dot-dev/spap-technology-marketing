@@ -1,0 +1,48 @@
+---
+import { Icon } from 'astro-icon/components';
+import MobileNavLink from './MobileNavLink.astro';
+---
+
+<div class="flex justify-between items-center lg:hidden">
+	<div class="text-3xl flex justify-center items-center">
+		<Icon name={'logos/black-primary'} />
+	</div>
+	<button
+		id="hamburger-menu"
+		class="text-2xl ml-auto block rounded-full border-black px-4 py-1 mt-4 border-2 mx-4 text-indigo-800"
+		><Icon name="mdi:apps" /></button
+	>
+</div>
+
+<dialog id="mobile-nav" class="h-screen w-screen rounded-md">
+	<button id="close-nav" class="ml-auto block m-4 outline-none w-fit text-xl"
+		><Icon name={'mdi:close'} /></button
+	>
+	<Icon class="text-7xl mx-auto" name="logos/vertical/black-vertical" />
+	<ul class="mt-16 flex flex-col items-center h-full gap-16 text-center p-8">
+		<li class="w-full">
+			<MobileNavLink href="/" name="Home" />
+		</li>
+		<li class="w-full">
+			<MobileNavLink href="/case-studies" name="Case Studies" />
+		</li>
+		<li class="w-full">
+			<MobileNavLink href="/contact" name="Contact" />
+		</li>
+	</ul>
+</dialog>
+
+<script>
+	const openNav = () => {
+		document.getElementById('mobile-nav').showModal();
+	};
+	document
+		.getElementById('hamburger-menu')
+		.addEventListener('click', () => openNav());
+
+	document
+		.getElementById('close-nav')
+		.addEventListener('click', () =>
+			document.getElementById('mobile-nav').close()
+		);
+</script>

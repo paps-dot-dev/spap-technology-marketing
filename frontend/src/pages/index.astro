@@ -1,0 +1,101 @@
+---
+import RootLayout from '../layouts/RootLayout.astro';
+import { Icon } from 'astro-icon/components';
+import ServicesHub from '../components/react/ServicesHub';
+import TestimonialContainer from '../components/react/TestimonialContainer';
+import SocialMediaIcon from '../components/astro/SocialMediaIcon.astro';
+import '../index.css';
+---
+
+<RootLayout title="SPAP Technology">
+	<section
+		id="hero"
+		class="min-h-[60vh] relative flex flex-col justify-center w-full items-center hero-bg mt-4"
+	>
+		<div class="bg-black h-full absolute top-0 left-0 w-full opacity-50"></div>
+		<div
+			id="socials"
+			class="z-10 w-fit rounded-full p-2 text-4xl ml-auto mb-auto mt-2 text-indigo-100 flex justify-evenly items-center space-x-2"
+		>
+			<SocialMediaIcon
+				href="https://x.com/shawn_paps"
+				icon="arcticons:x-twitter"
+			/>
+			<SocialMediaIcon
+				href="https://instagram.com/shawn.paps"
+				icon="arcticons:instagram"
+			/>
+			<SocialMediaIcon
+				href="https://linkedin.com/in/shawn-papineau"
+				icon="arcticons:linkedin"
+			/>
+			<SocialMediaIcon
+				href="https://github.com/paps-dot-dev"
+				icon="arcticons:github"
+			/>
+		</div>
+		<h1
+			class="text-5xl text-center z-10 font-bold bg-gradient-to-r from-purple-500 to-indigo-500 bg-clip-text text-transparent"
+		>
+			Modern Web Solutions That Actually Deliver for Creatives & Entrepreneurs.
+		</h1>
+		<button
+			class="z-10 ring-2 ring-indigo-500 my-8 mb-16 p-4 w-5/6 rounded-full text-white font-bold text-lg"
+			>Let's Chat <Icon class="inline" name={'mdi:arrow-top-right'} /></button
+		>
+	</section>
+	<section class="bg-slate-950 text-white py-8">
+		<div class="flex justify-between items-center p-4 gap-8">
+			<img class="w-16 object-cover" src="companies/noble-hauling.webp" />
+			<img class="w-16 object-cover" src="companies/carlton-music.webp" />
+			<img class="w-16 object-cover" src="companies/equature.png" />
+			<img class="w-16 object-cover" src="companies/withlovecake-logo.png" />
+		</div>
+	</section>
+	<section class="my-16 text-center mx-1">
+		<h1 class="text-xl font-light">When It Comes to Online Presence:</h1>
+		<h2 class="text-3xl font-bold text-indigo-700">You Deserve Better.</h2>
+		<div>
+			<p class="text-left text-sm mx-auto mt-2">
+				The digital landscape is constantly evolving, and cookie-cutter
+				solutions just don’t cut it anymore. You need more than a website—you
+				need a dynamic, engaging online presence that truly reflects your brand
+				and connects with your audience, and most importantly, drives <i
+					class="text-indigo-700">results</i
+				>.
+			</p>
+			<button
+				class="z-10 bg-indigo-500 mt-8 p-4 w-5/6 rounded-full text-white font-bold text-lg"
+				>Get Results <Icon
+					class="inline"
+					name={'mdi:arrow-top-right'}
+				/></button
+			>
+		</div>
+	</section>
+	<section class="mt-16 text-center p-2 py-8">
+		<h1 class="text-3xl font-bold">
+			Elegant Web Solutions for Creative Professionals
+		</h1>
+
+		<p class="text-sm text-left mx-auto">
+			We specialize in building custom, high-performance websites, applications,
+			integrations, and digital strategies that not only look great but drive
+			real results. It’s time to level up your online game.
+		</p>
+		<div>
+			<h2 class="text-xl font-bold mt-8">We're Not Your Typical Web Agency.</h2>
+			<p class="text-sm">
+				If you want sleek designs, optimized performance, and a tech stack that
+				doesn’t suck, you’ve come to the right place.
+			</p>
+		</div>
+	</section>
+	<section>
+		<ServicesHub client:visible />
+	</section>
+	<section class="my-16">
+		<h1 class="text-2xl font-bold text-center">What Our Clients Are Saying</h1>
+		<TestimonialContainer />
+	</section>
+</RootLayout>

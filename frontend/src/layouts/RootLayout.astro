@@ -1,0 +1,32 @@
+---
+import { Icon } from 'astro-icon/components';
+import NavigationContainer from '../components/astro/NavigationContainer.astro';
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<header>
+		<NavigationContainer />
+	</header>
+	<body class="p-4 max-w-screen-sm lg:max-w-screen-2xl mx-auto">
+		<slot />
+	</body>
+	<footer
+		class="bg-gradient-to-br from-indigo-800 to-indigo-500 p-4 text-white"
+	>
+		<Icon class="text-4xl" name={'logos/white-primary'} />
+		<p class="text-xs text-center mt-8">
+			© 2024 SPAP Technology Solutions. All Rights Reserved.
+		</p>
+	</footer>
+
+
+</html>
