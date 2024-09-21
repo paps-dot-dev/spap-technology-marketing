@@ -10,7 +10,7 @@ import '../index.css';
 <RootLayout title="SPAP Technology">
 	<section
 		id="hero"
-		class="min-h-[60vh] relative flex flex-col justify-center w-full items-center hero-bg mt-4"
+		class="min-h-[80vh] lg:min-h-screen relative flex flex-col w-full items-center hero-bg mt-4 lg:mt-0"
 	>
 		<div class="bg-black h-full absolute top-0 left-0 w-full opacity-50"></div>
 		<div
@@ -34,28 +34,43 @@ import '../index.css';
 				icon="arcticons:github"
 			/>
 		</div>
-		<h1
-			class="text-5xl text-center z-10 font-bold bg-gradient-to-r from-purple-500 to-indigo-500 bg-clip-text text-transparent"
-		>
-			Modern Web Solutions That Actually Deliver for Creatives & Entrepreneurs.
-		</h1>
-		<a
-			href="/contact"
-			class="z-10 ring-2 block text-center ring-indigo-500 my-8 mb-16 p-4 w-5/6 rounded-full text-white font-bold text-lg"
-			>Let's Chat <Icon class="inline" name={'mdi:arrow-top-right'} /></a
-		>
+		<div class="z-20 my-auto text-center">
+			<h1 class="text-4xl text-white z-10 mr-auto font-bold">
+				Hey. 👋 I'm Shawn.
+			</h1>
+
+			<h1
+				class="text-7xl z-10 font-bold bg-gradient-to-r from-purple-500 to-indigo-500 bg-clip-text text-transparent"
+			>
+				I build custom web solutions for Creatives & Entrepreneurs.
+			</h1>
+			<a
+				href="/contact"
+				class="z-10 ring-2 lg:ring-4 hover:bg-indigo-500 duration-200 ease-linear block mx-auto text-center ring-indigo-500 my-8 mb-16 p-4 lg:p-6 hover:scale-110 w-5/6 lg:w-1/2 rounded-full text-white font-bold text-lg"
+				>Let's Chat <Icon class="inline" name={'mdi:arrow-top-right'} /></a
+			>
+		</div>
 	</section>
-	<section class="bg-slate-950 text-white py-8">
+	<section class="bg-slate-950 text-white py-8 lg:py-2">
 		<div class="flex justify-between items-center p-4 gap-8">
-			<img class="w-16 object-cover" src="companies/noble-hauling.webp" />
-			<img class="w-16 object-cover" src="companies/carlton-music.webp" />
-			<img class="w-16 object-cover" src="companies/equature.png" />
-			<img class="w-16 object-cover" src="companies/withlovecake-logo.png" />
+			<img
+				class="w-16 lg:w-32 object-cover"
+				src="companies/noble-hauling.webp"
+			/>
+			<img
+				class="w-16 lg:w-32 object-cover"
+				src="companies/carlton-music.webp"
+			/>
+			<img class="w-16 lg:w-32 object-cover" src="companies/equature.png" />
+			<img
+				class="w-16 lg:w-32 object-cover"
+				src="companies/withlovecake-logo.png"
+			/>
 		</div>
 	</section>
 	<section class="my-16 text-center mx-1">
-		<h1 class="text-xl font-light">When It Comes to Online Presence:</h1>
-		<h2 class="text-3xl font-bold text-indigo-700">You Deserve Better.</h2>
+		<h2 class="text-xl font-light">When It Comes to Online Presence:</h2>
+		<h3 class="text-3xl font-bold text-indigo-700">You Deserve Better.</h3>
 		<div>
 			<p class="text-left text-sm mx-auto mt-2">
 				The digital landscape is constantly evolving, and cookie-cutter
@@ -74,29 +89,26 @@ import '../index.css';
 			>
 		</div>
 	</section>
-	<section class="mt-16 text-center p-2 py-8">
-		<h1 class="text-3xl font-bold">
+	<section class="mt-16 text-center p-2 py-8 mb-8">
+		<h2 class="text-3xl font-bold">
 			Elegant Web Solutions for Creative Professionals
-		</h1>
+		</h2>
 
 		<p class="text-sm text-left mx-auto">
-			We specialize in building custom, high-performance websites, applications,
+			I specialize in building custom, high-performance websites, applications,
 			integrations, and digital strategies that not only look great but drive
 			real results. It’s time to level up your online game.
 		</p>
-		<div>
-			<h2 class="text-xl font-bold mt-8">We're Not Your Typical Web Agency.</h2>
-			<p class="text-sm">
-				If you want sleek designs, optimized performance, and a tech stack that
-				doesn’t suck, you’ve come to the right place.
-			</p>
-		</div>
 	</section>
 	<section>
+		<h2 class="text-4xl text-center font-bold">What I Build</h2>
+
 		<ServicesHub client:visible />
 	</section>
 	<section class="my-16">
-		<h1 class="text-2xl font-bold text-center">What Our Clients Are Saying</h1>
+		<h1 class="text-2xl font-bold text-center">
+			Happy Clients are the Best Clients.
+		</h1>
 		<TestimonialContainer />
 	</section>
 </RootLayout>
