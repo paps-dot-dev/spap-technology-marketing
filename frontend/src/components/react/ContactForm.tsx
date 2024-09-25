@@ -15,7 +15,7 @@ const ContactForm: React.FC = () => {
 		firstName: '',
 		email: '',
 		projectScope: '',
-		campaignCategory: '',
+		campaignCategory: 'development',
 		electronicConsent: true,
 		signUpForNewsletter: 'Yes',
 	});
@@ -28,35 +28,60 @@ const ContactForm: React.FC = () => {
 		}));
 	};
 
-	const handleSubmit = async (e) => {
-		e.preventDefault();
-		let newSubData = {
-			email: formData.email,
-			firstName: formData.firstName,
-			groups: ['Welcome New Subscriber', 'Website Subscribers'],
-			trigger_automation: true,
-		};
+	const handleNewsletterSubscribe = async () => {
 		try {
-			//move this to api folder
-			const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-			const targetUrl = 'https://api.sender.net/v3/subscribers';
-
-			const response = await fetch(proxyUrl + targetUrl, {
+			const response = await fetch('api/newsletter', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
-					Authorization: `Bearer ${import.meta.env.PUBLIC_SENDER_TOKEN}`,
-					'x-requested-with': 'XMLHttpRequest',
 				},
-				body: JSON.stringify(newSubData),
+				body: JSON.stringify(formData),
 			});
-
-			if (response.ok) {
-				const data = await response.json();
-				console.log('Response:', data);
+			if (!response.ok) {
+				// If the response status is not OK (e.g., 500), throw an error
+				const errorMessage = await response.text(); // Get the raw response text for debugging
+				throw new Error(`Failed to submit form: ${errorMessage}`);
 			}
 		} catch (error) {
-			console.log(error);
+			console.error('Error during form submission:', error);
+			alert(`Error during form submission: ${error.message}`);
+		}
+	};
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+
+		try {
+			if (formData.signUpForNewsletter === 'Yes') {
+				handleNewsletterSubscribe();
+			}
+			// Send a POST request to the backend API
+			const response = await fetch('/api/subscribe', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json', // Set the content type for JSON
+				},
+				body: JSON.stringify(formData), // Send form data as JSON
+			});
+
+			// Check if the response status is OK
+			if (!response.ok) {
+				// If the response status is not OK (e.g., 500), throw an error
+				const errorMessage = await response.text(); // Get the raw response text for debugging
+				throw new Error(`Failed to submit form: ${errorMessage}`);
+			}
+
+			// Parse the JSON response from the server
+			const data = await response.json();
+
+			// Handle the response message
+			if (data.message) {
+				alert(data.message); // Display the message (success or error)
+			}
+		} catch (error) {
+			// Log the error and show an alert in case of any issues
+			console.error('Error during form submission:', error);
+			alert(`Error during form submission: ${error.message}`);
 		}
 	};
 
@@ -70,6 +95,7 @@ const ContactForm: React.FC = () => {
 					<input
 						id="firstName"
 						onChange={handleInputChange}
+						value={formData.firstName}
 						required
 						type="text"
 						placeholder="First Name"
@@ -82,6 +108,7 @@ const ContactForm: React.FC = () => {
 					<input
 						id="email"
 						onChange={handleInputChange}
+						value={formData.email}
 						required
 						type="email"
 						placeholder="Email Address"
@@ -93,6 +120,7 @@ const ContactForm: React.FC = () => {
 					Tell Me a Little About the Project.
 					<input
 						id="projectScope"
+						value={formData.projectScope}
 						onChange={handleInputChange}
 						placeholder="I want to redesign my website."
 						className="p-4 text-lg outline-none block bg-white/25 w-full rounded-full"
@@ -103,6 +131,7 @@ const ContactForm: React.FC = () => {
 					<select
 						onChange={handleInputChange}
 						id="campaignCategory"
+						value={formData.campaignCategory}
 						className=" p-4 text-lg outline-none block bg-white/25 w-full rounded-full">
 						<option value={'development'}>Modern Web Tools</option>
 						<option value={'marketing'}>Email Marketing</option>
@@ -129,6 +158,7 @@ const ContactForm: React.FC = () => {
 					</span>
 					<select
 						onChange={handleInputChange}
+						value={formData.signUpForNewsletter}
 						id="signUpForNewsletter"
 						className=" p-4 mt-1 text-lg outline-none block bg-white/25 w-full rounded-full">
 						<option>Yes</option>
