@@ -1,20 +1,19 @@
 ---
 import { Icon } from 'astro-icon/components';
 import MobileNavLink from './MobileNavLink.astro';
+import { Button } from '@/components/ui/button';
 ---
 
-<div class="flex justify-between items-center lg:hidden">
-	<div class="text-3xl flex justify-center items-center">
-		<Icon name={'logos/black-primary'} />
-	</div>
-	<button
-		id="hamburger-menu"
-		class="text-2xl ml-auto block fixed right-1 z-20 bg-white rounded-full border-black px-4 py-1 mt-4 border-2 mx-4 text-indigo-800"
-		><Icon name="mdi:apps" /></button
+<div class="flex justify-center items-center lg:hidden ml-auto mt-2">
+	<Button id="hamburger-menu" variant="outline"
+		><Icon name={'mdi:apps'} /></Button
 	>
 </div>
 
-<dialog id="mobile-nav" class="h-screen w-screen rounded-md">
+<dialog
+	id="mobile-nav"
+	class="h-screen w-screen rounded-md bg-black border-white border-2 text-white"
+>
 	<button id="close-nav" class="ml-auto block m-4 outline-none w-fit text-xl"
 		><Icon name={'mdi:close'} /></button
 	>
@@ -28,6 +27,12 @@ import MobileNavLink from './MobileNavLink.astro';
 		</li>
 		<li class="w-full">
 			<MobileNavLink href="/contact" name="Contact" />
+		</li>
+		<li class="w-full">
+			<MobileNavLink
+				href="https://newsletter.spaptechnology.com/subscribe"
+				name="Newsletter"
+			/>
 		</li>
 	</ul>
 </dialog>

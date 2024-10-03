@@ -11,7 +11,7 @@ import {
 
 const ServicesHub: React.FC = () => {
 	return (
-		<div className="flex items-center overflow-x-scroll min-w-screen mt-8">
+		<div className="flex items-center overflow-x-scroll w-screen mt-8">
 			<ServiceCard
 				icon={<MdWeb className="text-7xl mb-16" />}
 				service={'Websites'}

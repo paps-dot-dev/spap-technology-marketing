@@ -4,11 +4,100 @@ import { Icon } from 'astro-icon/components';
 import ServicesHub from '../components/react/ServicesHub';
 import TestimonialContainer from '../components/react/TestimonialContainer';
 import SocialMediaIcon from '../components/astro/SocialMediaIcon.astro';
+import Logo from '../components/astro/Logo.astro';
 import '../index.css';
+
+import '../styles/globals.css';
+
+const handleRedirect = (url) => {
+	window.location.href = url;
+};
 ---
 
 <RootLayout title="SPAP Technology">
 	<section
+		id="hero"
+		class="text-white flex-col font-light flex flex-col justify-center text-5xl pb-48"
+	>
+		<div
+			id="socials"
+			class="z-10 w-fit rounded-full p-2 text-4xl mr-auto mb-16 mt-2 text-indigo-100 flex justify-evenly items-center space-x-2"
+		>
+			<SocialMediaIcon
+				href="https://x.com/shawn_paps"
+				icon="arcticons:x-twitter"
+			/>
+			<SocialMediaIcon
+				href="https://instagram.com/shawn.paps"
+				icon="arcticons:instagram"
+			/>
+			<SocialMediaIcon
+				href="https://linkedin.com/in/shawn-papineau"
+				icon="arcticons:linkedin"
+			/>
+			<SocialMediaIcon
+				href="https://github.com/paps-dot-dev"
+				icon="arcticons:github"
+			/>
+		</div>
+		<Logo />
+
+		<h1 class="mb-4">
+			It's time to <span class="text-indigo-400 font-medium">reimagine</span> what
+			a website can do for your business.
+		</h1>
+		<p class="text-[1.5rem] py-5">
+			<span class="text-indigo-400 font-medium">SPAP Technology Solutions</span>
+			is a web development agency that empowers entrepreneurs & creatives through
+			custom websites & applications.
+		</p>
+		<p class="text-sm py-2 text-center font-semibold">
+			Transform your online presence today.
+		</p>
+		<a
+			href="/contact"
+			class="block border-2 border-white rounded text-center text-[1rem] lg:text-md cursor-pointer hover:bg-white p-4"
+			>Let's Chat<Icon class="inline ml-4" name={'mdi:arrow-top-right'} /></a
+		>
+	</section>
+	<section class="text-white">
+		<h2 class="text-3xl font-medium">
+			I am a web developer solving your online problems with the power of the
+			modern web.
+		</h2>
+		<div>
+			<ServicesHub />
+		</div>
+	</section>
+	<section class="text-white py-32">
+		<h2 class="text-3xl font-medium">
+			Trusted by these businesses & creatives.
+		</h2>
+		<div class="flex justify-between items-center p-4 gap-8">
+			<img
+				class="w-16 lg:w-32 object-cover"
+				src="companies/noble-hauling.webp"
+			/>
+			<img
+				class="w-16 lg:w-32 object-cover"
+				src="companies/carlton-music.webp"
+			/>
+			<img class="w-16 lg:w-32 object-cover" src="companies/equature.png" />
+			<img
+				class="w-16 lg:w-32 object-cover"
+				src="companies/withlovecake-logo.png"
+			/>
+		</div>
+	</section>
+	<section class="text-white border-2 px-2">
+		<h2 class="text-3xl text-center font-medium">What My Clients are Saying</h2>
+		<h3>
+			Grow your online presence and get results just like these businesses.
+		</h3>
+		<TestimonialContainer />
+	</section>
+</RootLayout>
+<!-- <section
 		id="hero"
 		class="min-h-[80vh] lg:min-h-screen relative flex flex-col w-full items-center hero-bg mt-4 lg:mt-0"
 	>
@@ -50,8 +139,8 @@ import '../index.css';
 				>Let's Chat <Icon class="inline" name={'mdi:arrow-top-right'} /></a
 			>
 		</div>
-	</section>
-	<section class="bg-slate-950 text-white py-8 lg:py-2">
+	</section> -->
+<!-- <section class="bg-slate-950 text-white py-8 lg:py-2">
 		<div class="flex justify-between items-center p-4 gap-8">
 			<img
 				class="w-16 lg:w-32 object-cover"
@@ -110,5 +199,4 @@ import '../index.css';
 			Happy Clients are the Best Clients.
 		</h1>
 		<TestimonialContainer />
-	</section>
-</RootLayout>
+	</section> -->

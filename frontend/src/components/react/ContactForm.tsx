@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { Button } from '../ui/button';
 
 interface FormDataProps {
 	firstName: string;
@@ -86,11 +87,11 @@ const ContactForm: React.FC = () => {
 	};
 
 	return (
-		<div className="mt-8 w-full lg:mt-24 lg:px-96">
+		<div className="mt-8 w-full lg:mt-24 lg:px-96 border-2">
 			<form
 				onSubmit={handleSubmit}
 				className="flex flex-col gap-4 text-white p-5 rounded-md w-full">
-				<label className="text-md">
+				<label className="text-sm">
 					First Name
 					<input
 						id="firstName"
@@ -99,11 +100,11 @@ const ContactForm: React.FC = () => {
 						required
 						type="text"
 						placeholder="First Name"
-						className="p-4 block text-lg outline-none bg-white/25 w-full rounded-full"
+						className="p-4 mt-1 block text-sm outline-none bg-transparent border-2 w-full rounded"
 					/>
 				</label>
 
-				<label className="text-md">
+				<label className="text-sm">
 					Email Address
 					<input
 						id="email"
@@ -112,18 +113,18 @@ const ContactForm: React.FC = () => {
 						required
 						type="email"
 						placeholder="Email Address"
-						className="p-4 text-lg outline-none block bg-white/25 w-full rounded-full"
+						className="p-4 mt-1 block text-sm outline-none bg-transparent border-2 w-full rounded"
 					/>
 				</label>
 
-				<label className="text-md">
+				<label className="text-sm">
 					Tell Me a Little About the Project.
 					<input
 						id="projectScope"
 						value={formData.projectScope}
 						onChange={handleInputChange}
 						placeholder="I want to redesign my website."
-						className="p-4 text-lg outline-none block bg-white/25 w-full rounded-full"
+						className="p-4 mt-1 block text-sm outline-none bg-transparent border-2 w-full rounded"
 					/>
 				</label>
 				<label className="text-md">
@@ -132,7 +133,7 @@ const ContactForm: React.FC = () => {
 						onChange={handleInputChange}
 						id="campaignCategory"
 						value={formData.campaignCategory}
-						className=" p-4 text-lg outline-none block bg-white/25 w-full rounded-full">
+						className="p-4 mt-1 block text-sm outline-none bg-transparent border-2 w-full rounded">
 						<option value={'development'}>Modern Web Tools</option>
 						<option value={'marketing'}>Email Marketing</option>
 						<option value={'business'}>Business Tools</option>
@@ -150,7 +151,7 @@ const ContactForm: React.FC = () => {
 					I consent to receiving newsletter and email communications from SPAP
 					Technology Solutions.
 				</label>
-				<label className="text-md bg-white  p-4 rounded-md bg-gradient-to-b from-indigo-500 to-violet-500 font-bold text-lg">
+				<label className="text-md border-2  p-4 rounded-md  font-bold text-sm">
 					<span className="">Subscribe to 'Riffs. Code. Coffee.'</span>
 					<span className="block font-medium text-xs mb-4">
 						A free newsletter where I talk about music, tech, coffee, and
@@ -160,17 +161,18 @@ const ContactForm: React.FC = () => {
 						onChange={handleInputChange}
 						value={formData.signUpForNewsletter}
 						id="signUpForNewsletter"
-						className=" p-4 mt-1 text-lg outline-none block bg-white/25 w-full rounded-full">
+						className="p-4 mt-1 block text-sm outline-none bg-transparent border-2 w-full text-sm rounded">
 						<option>Yes</option>
 						<option>No</option>
 					</select>
 				</label>
 
-				<button
-					type="submit"
-					className="p-4 block mx-auto w-5/6 bg-indigo-500 rounded-full text-white font-bold mt-2">
-					Continue
-				</button>
+				<Button
+					variant="outline"
+					className="my-8 p-10 bg-white text-black"
+					type="submit">
+					Get In Touch.
+				</Button>
 			</form>
 		</div>
 	);
