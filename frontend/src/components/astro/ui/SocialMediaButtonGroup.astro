@@ -1,0 +1,37 @@
+---
+import SocialMediaButton from './SocialMediaButton.astro';
+
+const socialMediaLinks = [
+	{
+		id: 1,
+		name: 'LinkedIn',
+		iconRef: 'mdi:linkedin',
+		href: 'https://linkedin.com/in/shawn-papineau',
+		color: 'text-primary',
+	},
+	{
+		id: 2,
+		name: 'Instagram',
+		iconRef: 'mdi:instagram',
+		href: 'https://instagram.com/shawn.paps',
+		color: 'text-primary',
+	},
+	{
+		id: 3,
+		name: 'X',
+		iconRef: 'arcticons:x-twitter',
+		href: 'https://x.com/shawn_paps',
+		color: 'text-primary',
+	},
+];
+---
+
+<div
+	class="flex justify-between items-center mr-auto lg:mx-auto space-x-2 lg:order-3"
+>
+	{
+		socialMediaLinks.map((item) => (
+			<SocialMediaButton key={item.id} buttonData={item} />
+		))
+	}
+</div>

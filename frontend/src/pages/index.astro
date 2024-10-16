@@ -5,198 +5,67 @@ import ServicesHub from '../components/react/ServicesHub';
 import TestimonialContainer from '../components/react/TestimonialContainer';
 import SocialMediaIcon from '../components/astro/SocialMediaIcon.astro';
 import Logo from '../components/astro/Logo.astro';
+import SocialMediaButtonGroup from '../components/astro/ui/SocialMediaButtonGroup.astro';
 import '../index.css';
 
 import '../styles/globals.css';
+import { Button } from '../components/ui/button';
+import SocialMediaButton from '@/components/astro/ui/SocialMediaButton.astro';
+import FeaturedProjectsGrid from '../components/astro/FeaturedProjectsGrid.astro';
 
 const handleRedirect = (url) => {
 	window.location.href = url;
 };
 ---
 
-<RootLayout title="SPAP Technology">
+<RootLayout title="Modern Web Solutions for Entrepreneurs & Creators">
+	<!-- Video Background -->
 	<section
 		id="hero"
-		class="text-white flex-col font-light flex flex-col justify-center text-5xl pb-48"
+		class="relative w-full h-screen overflow-hidden rounded-xl"
 	>
-		<div
-			id="socials"
-			class="z-10 w-fit rounded-full p-2 text-4xl mr-auto mb-16 mt-2 text-indigo-100 flex justify-evenly items-center space-x-2"
-		>
-			<SocialMediaIcon
-				href="https://x.com/shawn_paps"
-				icon="arcticons:x-twitter"
-			/>
-			<SocialMediaIcon
-				href="https://instagram.com/shawn.paps"
-				icon="arcticons:instagram"
-			/>
-			<SocialMediaIcon
-				href="https://linkedin.com/in/shawn-papineau"
-				icon="arcticons:linkedin"
-			/>
-			<SocialMediaIcon
-				href="https://github.com/paps-dot-dev"
-				icon="arcticons:github"
-			/>
-		</div>
-		<Logo />
+		<video
+			class="absolute top-1/2 left-1/2 w-full h-full object-cover transform -translate-x-1/2 -translate-y-1/2 z-10"
+			src="https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/media/video/Abstract%20Background%20Video.mp4"
+			autoplay
+			muted
+			loop
+			playsinline></video>
 
-		<h1 class="mb-4">
-			It's time to <span class="text-indigo-400 font-medium">reimagine</span> what
-			a website can do for your business.
-		</h1>
-		<p class="text-[1.5rem] py-5">
-			<span class="text-indigo-400 font-medium">SPAP Technology Solutions</span>
-			is a web development agency that empowers entrepreneurs & creatives through
-			custom websites & applications.
-		</p>
-		<p class="text-sm py-2 text-center font-semibold">
-			Transform your online presence today.
-		</p>
-		<a
-			href="/contact"
-			class="block border-2 border-white rounded text-center text-[1rem] lg:text-md cursor-pointer hover:bg-white p-4"
-			>Let's Chat<Icon class="inline ml-4" name={'mdi:arrow-top-right'} /></a
+		<!-- Content on top of the video -->
+		<div
+			id="content-container"
+			class="relative z-20 bg-black/40 flex flex-col items-center lg:justify-center py-10 text-white px-4 h-full"
 		>
-	</section>
-	<section class="text-white">
-		<h2 class="text-3xl font-medium">
-			I am a web developer solving your online problems with the power of the
-			modern web.
-		</h2>
-		<div>
-			<ServicesHub />
+			<h1
+				class="text-4xl lg:text-6xl font-bold lg:text-center mb-4 lg:order-1 lg:w-2/3 lowercase"
+			>
+				Unleash your creativity with the power of the modern web.
+			</h1>
+			<SocialMediaButtonGroup />
+			<p
+				class="text-right pl-20 py-8 font-bold text-lg lg:order-2 lg:text-xl lowercase"
+			>
+				SPAP Technology crafts custom web solutions for creators & entrepreneurs
+				that want more than just a website.
+			</p>
 		</div>
 	</section>
-	<section class="text-white py-32">
-		<h2 class="text-3xl font-medium">
-			Trusted by these businesses & creatives.
-		</h2>
-		<div class="flex justify-between items-center p-4 gap-8">
-			<img
-				class="w-16 lg:w-32 object-cover"
-				src="companies/noble-hauling.webp"
-			/>
-			<img
-				class="w-16 lg:w-32 object-cover"
-				src="companies/carlton-music.webp"
-			/>
-			<img class="w-16 lg:w-32 object-cover" src="companies/equature.png" />
-			<img
-				class="w-16 lg:w-32 object-cover"
-				src="companies/withlovecake-logo.png"
-			/>
+	<section id="featured-projects" class="min-h-screen bg-text-primary py-8">
+		<div
+			class="flex justify-between items-center border-b-2 py-4 border-background-primary px-2 mx-2"
+		>
+			<h2 class="text-3xl font-bold">featured projects</h2>
+			<div class="w-24">
+				<SocialMediaButton
+					buttonData={{
+						iconRef: 'mdi:github',
+						href: 'https://github.com/paps-dot-dev',
+						color: 'background-primary',
+					}}
+				/>
+			</div>
 		</div>
-	</section>
-	<section class="text-white border-2 px-2">
-		<h2 class="text-3xl text-center font-medium">What My Clients are Saying</h2>
-		<h3>
-			Grow your online presence and get results just like these businesses.
-		</h3>
-		<TestimonialContainer />
+		<FeaturedProjectsGrid />
 	</section>
 </RootLayout>
-<!-- <section
-		id="hero"
-		class="min-h-[80vh] lg:min-h-screen relative flex flex-col w-full items-center hero-bg mt-4 lg:mt-0"
-	>
-		<div class="bg-black h-full absolute top-0 left-0 w-full opacity-50"></div>
-		<div
-			id="socials"
-			class="z-10 w-fit rounded-full p-2 text-4xl ml-auto mb-auto mt-2 text-indigo-100 flex justify-evenly items-center space-x-2"
-		>
-			<SocialMediaIcon
-				href="https://x.com/shawn_paps"
-				icon="arcticons:x-twitter"
-			/>
-			<SocialMediaIcon
-				href="https://instagram.com/shawn.paps"
-				icon="arcticons:instagram"
-			/>
-			<SocialMediaIcon
-				href="https://linkedin.com/in/shawn-papineau"
-				icon="arcticons:linkedin"
-			/>
-			<SocialMediaIcon
-				href="https://github.com/paps-dot-dev"
-				icon="arcticons:github"
-			/>
-		</div>
-		<div class="z-20 my-auto text-center">
-			<h1 class="text-4xl text-white z-10 mr-auto font-bold">
-				Hey. 👋 I'm Shawn.
-			</h1>
-
-			<h1
-				class="text-7xl z-10 font-bold bg-gradient-to-r from-purple-500 to-indigo-500 bg-clip-text text-transparent"
-			>
-				I build custom web solutions for Creatives & Entrepreneurs.
-			</h1>
-			<a
-				href="/contact"
-				class="z-10 ring-2 lg:ring-4 hover:bg-indigo-500 duration-200 ease-linear block mx-auto text-center ring-indigo-500 my-8 mb-16 p-4 lg:p-6 hover:scale-110 w-5/6 lg:w-1/2 rounded-full text-white font-bold text-lg"
-				>Let's Chat <Icon class="inline" name={'mdi:arrow-top-right'} /></a
-			>
-		</div>
-	</section> -->
-<!-- <section class="bg-slate-950 text-white py-8 lg:py-2">
-		<div class="flex justify-between items-center p-4 gap-8">
-			<img
-				class="w-16 lg:w-32 object-cover"
-				src="companies/noble-hauling.webp"
-			/>
-			<img
-				class="w-16 lg:w-32 object-cover"
-				src="companies/carlton-music.webp"
-			/>
-			<img class="w-16 lg:w-32 object-cover" src="companies/equature.png" />
-			<img
-				class="w-16 lg:w-32 object-cover"
-				src="companies/withlovecake-logo.png"
-			/>
-		</div>
-	</section>
-	<section class="my-16 text-center mx-1">
-		<h2 class="text-xl font-light">When It Comes to Online Presence:</h2>
-		<h3 class="text-3xl font-bold text-indigo-700">You Deserve Better.</h3>
-		<div>
-			<p class="text-left text-sm mx-auto mt-2">
-				The digital landscape is constantly evolving, and cookie-cutter
-				solutions just don’t cut it anymore. You need more than a website—you
-				need a dynamic, engaging online presence that truly reflects your brand
-				and connects with your audience, and most importantly, drives <i
-					class="text-indigo-700">results</i
-				>.
-			</p>
-			<button
-				class="z-10 bg-indigo-500 mt-8 p-4 w-5/6 rounded-full text-white font-bold text-lg"
-				>Get Results <Icon
-					class="inline"
-					name={'mdi:arrow-top-right'}
-				/></button
-			>
-		</div>
-	</section>
-	<section class="mt-16 text-center p-2 py-8 mb-8">
-		<h2 class="text-3xl font-bold">
-			Elegant Web Solutions for Creative Professionals
-		</h2>
-
-		<p class="text-sm text-left mx-auto">
-			I specialize in building custom, high-performance websites, applications,
-			integrations, and digital strategies that not only look great but drive
-			real results. It’s time to level up your online game.
-		</p>
-	</section>
-	<section>
-		<h2 class="text-4xl text-center font-bold">What I Build</h2>
-
-		<ServicesHub client:visible />
-	</section>
-	<section class="my-16">
-		<h1 class="text-2xl font-bold text-center">
-			Happy Clients are the Best Clients.
-		</h1>
-		<TestimonialContainer />
-	</section> -->

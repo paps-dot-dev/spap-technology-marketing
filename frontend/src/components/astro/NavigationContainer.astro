@@ -1,7 +1,20 @@
 ---
 import MobileNavigation from '../astro/MobileNavigation.astro';
+import { Button } from '../ui/button';
 ---
 
-<nav class="w-screen flex flex-col justify-start items-start">
-	<MobileNavigation />
+<nav class="w-screen px-4 py-8">
+	<div class="flex items-center justify-between">
+		<a href="/">
+			<img
+				class="max-w-24 object-cover"
+				src="https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/branding/logos/SPAP%20Logos/Primary/PNG/White_Primary%20Lockup_SPAP.png"
+			/>
+		</a>
+
+		<div class="flex items-center gap-2">
+			<a href="/contact"><Button variant="outline">contact me</Button></a>
+			<MobileNavigation />
+		</div>
+	</div>
 </nav>

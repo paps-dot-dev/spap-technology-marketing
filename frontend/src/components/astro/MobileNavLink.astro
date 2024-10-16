@@ -3,7 +3,13 @@ const { name, href } = Astro.props;
 import { Icon } from 'astro-icon/components';
 ---
 
-<a
-	class="border-2 text-xl border-white block w-full p-4 rounded hover:border-white hover:scale-110"
-	href={href}>{name} <Icon class="inline" name="mdi:arrow-top-right" /></a
+<div
+	class="flex justify-between items-center w-full p-2 text-2xl font-bold rounded hover:border-white hover:scale-110"
 >
+	<span>{name}</span>
+	<a
+		class="border-2 border-background-primary text-background-primary rounded-full px-8 py-2"
+	>
+		<Icon class="" name="mdi:arrow-top-right" />
+	</a>
+</div>

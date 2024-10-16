@@ -1,0 +1,21 @@
+---
+import { supabase } from '../../db/supabase';
+
+const { data, error } = await supabase.from('projects').select('*');
+---
+
+<div>
+	{
+		data.map((project) => (
+			<div>
+				<img
+					src={
+						project.thumbnail_url
+							? project.thumbnail_url
+							: 'https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/branding/logos/SPAP%20Logos/Primary/PNG/White_Primary%20Lockup_SPAP.png'
+					}
+				/>
+			</div>
+		))
+	}
+</div>
