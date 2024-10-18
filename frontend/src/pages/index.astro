@@ -1,21 +1,12 @@
 ---
 import RootLayout from '../layouts/RootLayout.astro';
-import { Icon } from 'astro-icon/components';
-import ServicesHub from '../components/react/ServicesHub';
-import TestimonialContainer from '../components/react/TestimonialContainer';
-import SocialMediaIcon from '../components/astro/SocialMediaIcon.astro';
-import Logo from '../components/astro/Logo.astro';
+
 import SocialMediaButtonGroup from '../components/astro/ui/SocialMediaButtonGroup.astro';
 import '../index.css';
 
 import '../styles/globals.css';
-import { Button } from '../components/ui/button';
 import SocialMediaButton from '@/components/astro/ui/SocialMediaButton.astro';
 import FeaturedProjectsGrid from '../components/astro/FeaturedProjectsGrid.astro';
-
-const handleRedirect = (url) => {
-	window.location.href = url;
-};
 ---
 
 <RootLayout title="Modern Web Solutions for Entrepreneurs & Creators">
@@ -35,19 +26,24 @@ const handleRedirect = (url) => {
 		<!-- Content on top of the video -->
 		<div
 			id="content-container"
-			class="relative z-20 bg-black/40 flex flex-col items-center lg:justify-center py-10 text-white px-4 h-full"
+			class="relative z-20 bg-black/75 flex flex-col items-center lg:justify-center py-10 text-white px-4 h-full"
 		>
 			<h1
 				class="text-4xl lg:text-6xl font-bold lg:text-center mb-4 lg:order-1 lg:w-2/3 lowercase"
 			>
 				Unleash your creativity with the power of the modern web.
 			</h1>
-			<SocialMediaButtonGroup />
+			<SocialMediaButtonGroup color="text-primary" />
 			<p
-				class="text-right pl-20 py-8 font-bold text-lg lg:order-2 lg:text-xl lowercase"
+				class="text-right pl-20 py-8 font-bold text-xl lg:order-2 lg:text-xl lowercase"
 			>
-				SPAP Technology crafts custom web solutions for creators & entrepreneurs
-				that want more than just a website.
+				SPAP Technology crafts custom web solutions for <span
+					class="bg-gradient-to-r from-accent-primary to-accent-pop bg-clip-text text-transparent"
+					>creators & Entrepreneurs
+				</span>
+				that want <span class="text-accent-secondary underline"
+					>more than just a website.</span
+				>
 			</p>
 		</div>
 	</section>
@@ -55,7 +51,7 @@ const handleRedirect = (url) => {
 		<div
 			class="flex justify-between items-center border-b-2 py-4 border-background-primary px-2 mx-2"
 		>
-			<h2 class="text-3xl font-bold">featured projects</h2>
+			<h2 class="text-3xl lg:text-4xl font-bold">featured projects</h2>
 			<div class="w-24">
 				<SocialMediaButton
 					buttonData={{

@@ -14,20 +14,10 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 
-	<body
-		class="mx-auto bg-gradient-to-b from-black to-gray-900 min-h-screen flex flex-col items-center"
-	>
-		<header>
-			<NavigationContainer />
-		</header>
+	<body class="mx-auto bg-gradient-to-b from-black to-background-primary">
+		<header><NavigationContainer /></header>
 		<main>
 			<slot />
 		</main>
-		<footer class="p-4 text-white w-full mt-auto border-t-[.5px]">
-			<Icon class="text-4xl" name={'logos/white-primary'} />
-			<p class="text-xs text-center mt-8">
-				© 2024 SPAP Technology Solutions. All Rights Reserved.
-			</p>
-		</footer>
 	</body>
 </html>

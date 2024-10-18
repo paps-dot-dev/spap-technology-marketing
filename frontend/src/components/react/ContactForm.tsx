@@ -31,7 +31,7 @@ const ContactForm: React.FC = () => {
 
 	const handleNewsletterSubscribe = async () => {
 		try {
-			const response = await fetch('api/newsletter', {
+			const response = await fetch('/api/newsletter', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
@@ -87,10 +87,10 @@ const ContactForm: React.FC = () => {
 	};
 
 	return (
-		<div className="mt-8 w-full lg:mt-24 lg:px-96 border-2">
+		<div className="mt-8 w-full lg:my-16 lg:mb-32  ">
 			<form
 				onSubmit={handleSubmit}
-				className="flex flex-col gap-4 text-white p-5 rounded-md w-full">
+				className="flex flex-col gap-4 text-white p-5 rounded-md w-full bg-background-primary/50 lg:p-20">
 				<label className="text-sm">
 					First Name
 					<input
@@ -152,7 +152,11 @@ const ContactForm: React.FC = () => {
 					Technology Solutions.
 				</label>
 				<label className="text-md border-2  p-4 rounded-md  font-bold text-sm">
-					<span className="">Subscribe to 'Riffs. Code. Coffee.'</span>
+					<img
+						className="rounded-xl lg:w-1/4 w-1/2 mb-2 object-cover"
+						src="https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/branding/logos/RiffsCodeCoffee.png"
+					/>
+					<span className="text-xl">Subscribe to 'Riffs. Code. Coffee.'</span>
 					<span className="block font-medium text-xs mb-4">
 						A free newsletter where I talk about music, tech, coffee, and
 						everything in between.
@@ -169,7 +173,7 @@ const ContactForm: React.FC = () => {
 
 				<Button
 					variant="outline"
-					className="my-8 p-10 bg-white text-black"
+					className="my-8 p-10 bg-accent-primary text-text-primary"
 					type="submit">
 					Get In Touch.
 				</Button>

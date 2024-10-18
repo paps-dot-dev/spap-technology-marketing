@@ -1,13 +1,13 @@
 ---
 import { Icon } from 'astro-icon/components';
 
-const { buttonData } = Astro.props;
+const { buttonData, color } = Astro.props;
 ---
 
 <a
 	href={buttonData.href}
 	target="_blank"
-	class=`border-2 border-${buttonData.color} text-${buttonData.color} bg-transparent flex-col justify-center flex items-center rounded-full text-2xl p-3`
+	class=`border-2 border-${color} text-${color} bg-transparent flex-col justify-center flex items-center rounded-full text-2xl lg:text-4xl p-3 hover:border-accent-pop duration-200 ease-linear hover:text-accent-pop hover:scale-110`
 >
 	<Icon class="" name={buttonData.iconRef} />
 </a>

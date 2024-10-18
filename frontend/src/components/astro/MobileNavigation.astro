@@ -2,9 +2,10 @@
 import { Icon } from 'astro-icon/components';
 import MobileNavLink from './MobileNavLink.astro';
 import { Button } from '@/components/ui/button';
+import SocialMediaButtonGroup from './ui/SocialMediaButtonGroup.astro';
 ---
 
-<div class="flex justify-center items-center lg:hidden">
+<div class="flex justify-center items-center">
 	<button class="rounded-full bg-text-primary p-4" id="hamburger-menu"
 		><Icon class="text-xl text-accent-primary" name={'mdi:apps'} /></button
 	>
@@ -12,24 +13,26 @@ import { Button } from '@/components/ui/button';
 
 <dialog
 	id="mobile-nav"
-	class="h-screen w-screen rounded-md bg-text-primary text-background-primary"
+	class="h-screen w-screen lg:max-w-screen-xl rounded-xl bg-text-primary text-background-primary"
 >
 	<div class="flex justify-between items-center p-4">
 		<img
 			class="w-6 object-cover"
 			src="https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/branding/logos/SPAP%20Logos/Icon/PNG/Black_Icon%20Lockup_SPAP.png"
 		/>
-		<button id="close-nav" class="ml-auto block outline-none w-fit text-xl"
+		<button
+			id="close-nav"
+			class="ml-auto block outline-none w-fit text-xl lg:text-4xl hover:text-accent-pop hover:rotate-180 duration-200 ease-linear"
 			><Icon name={'mdi:close'} /></button
 		>
 	</div>
 
-	<ul class="flex flex-col items-center h-full gap-16 text-left px-4 mt-8">
+	<ul class="flex flex-col items-center gap-16 text-left px-4 mt-8">
 		<li class="w-full">
 			<MobileNavLink href="/" name="Home" />
 		</li>
 		<li class="w-full">
-			<MobileNavLink href="/case-studies" name="Case Studies" />
+			<MobileNavLink href="/#featured-projects" name="Featured Projects" />
 		</li>
 		<li class="w-full">
 			<MobileNavLink href="/contact" name="Contact" />
@@ -39,6 +42,9 @@ import { Button } from '@/components/ui/button';
 				href="https://newsletter.spaptechnology.com/subscribe"
 				name="Newsletter"
 			/>
+		</li>
+		<li class="lg:w-1/5 ml-auto">
+			<SocialMediaButtonGroup color="accent-primary" />
 		</li>
 	</ul>
 </dialog>
