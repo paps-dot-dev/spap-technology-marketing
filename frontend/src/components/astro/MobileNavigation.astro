@@ -2,28 +2,37 @@
 import { Icon } from 'astro-icon/components';
 import MobileNavLink from './MobileNavLink.astro';
 import { Button } from '@/components/ui/button';
+import SocialMediaButtonGroup from './ui/SocialMediaButtonGroup.astro';
 ---
 
-<div class="flex justify-center items-center lg:hidden ml-auto mt-2">
-	<Button id="hamburger-menu" variant="outline"
-		><Icon name={'mdi:apps'} /></Button
+<div class="flex justify-center items-center">
+	<button class="rounded-full bg-text-primary p-4" id="hamburger-menu"
+		><Icon class="text-xl text-accent-primary" name={'mdi:apps'} /></button
 	>
 </div>
 
 <dialog
 	id="mobile-nav"
-	class="h-screen w-screen rounded-md bg-black border-white border-2 text-white"
+	class="h-screen w-screen lg:max-w-screen-xl rounded-xl bg-text-primary text-background-primary"
 >
-	<button id="close-nav" class="ml-auto block m-4 outline-none w-fit text-xl"
-		><Icon name={'mdi:close'} /></button
-	>
-	<Icon class="text-7xl mx-auto" name="logos/vertical/black-vertical" />
-	<ul class="mt-16 flex flex-col items-center h-full gap-16 text-center p-8">
+	<div class="flex justify-between items-center p-4">
+		<img
+			class="w-6 object-cover"
+			src="https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/branding/logos/SPAP%20Logos/Icon/PNG/Black_Icon%20Lockup_SPAP.png"
+		/>
+		<button
+			id="close-nav"
+			class="ml-auto block outline-none w-fit text-xl lg:text-4xl hover:text-accent-pop hover:rotate-180 duration-200 ease-linear"
+			><Icon name={'mdi:close'} /></button
+		>
+	</div>
+
+	<ul class="flex flex-col items-center gap-16 text-left px-4 mt-8">
 		<li class="w-full">
 			<MobileNavLink href="/" name="Home" />
 		</li>
 		<li class="w-full">
-			<MobileNavLink href="/case-studies" name="Case Studies" />
+			<MobileNavLink href="/#featured-projects" name="Featured Projects" />
 		</li>
 		<li class="w-full">
 			<MobileNavLink href="/contact" name="Contact" />
@@ -34,20 +43,28 @@ import { Button } from '@/components/ui/button';
 				name="Newsletter"
 			/>
 		</li>
+		<li class="lg:w-1/5 ml-auto">
+			<SocialMediaButtonGroup color="accent-primary" />
+		</li>
 	</ul>
 </dialog>
 
 <script>
 	const openNav = () => {
-		document.getElementById('mobile-nav').showModal();
+		const mobileNav = document.getElementById(
+			'mobile-nav'
+		) as HTMLDialogElement;
+		mobileNav.showModal();
 	};
-	document
-		.getElementById('hamburger-menu')
-		.addEventListener('click', () => openNav());
 
 	document
-		.getElementById('close-nav')
-		.addEventListener('click', () =>
-			document.getElementById('mobile-nav').close()
-		);
+		.getElementById('hamburger-menu')
+		?.addEventListener('click', () => openNav());
+
+	document.getElementById('close-nav')?.addEventListener('click', () => {
+		const mobileNav = document.getElementById(
+			'mobile-nav'
+		) as HTMLDialogElement;
+		mobileNav.close();
+	});
 </script>

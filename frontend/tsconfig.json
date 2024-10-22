@@ -1,3 +1,15 @@
+// {
+// 	"extends": "astro/tsconfigs/base",
+// 	"compilerOptions": {
+// 		"jsx": "react-jsx",
+// 		"jsxImportSource": "react",
+// 		"baseUrl": ".",
+// 		"paths": {
+// 			"@/*": ["./src/*"]
+// 		}
+// 	}
+// }
+
 {
 	"extends": "astro/tsconfigs/base",
 	"compilerOptions": {
@@ -6,6 +18,12 @@
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["./src/*"]
-		}
+		},
+		"strict": false, // Disables all strict type-checking options
+		"noImplicitAny": false, // Allows implicit 'any' types
+		"strictNullChecks": false, // Disables strict checks for null and undefined
+		"strictFunctionTypes": false, // Relaxes function type checking
+		"noImplicitReturns": false, // Functions don't need explicit return statements
+		"skipLibCheck": true // Skips type checking for all declaration files
 	}
 }

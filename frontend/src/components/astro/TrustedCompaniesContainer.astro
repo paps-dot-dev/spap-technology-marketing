@@ -1,0 +1,19 @@
+---
+import { supabase } from '../../db/supabase';
+
+const { data, error } = await supabase.from('trusted_companies').select('*');
+
+if (error) {
+	throw new Error('Failed to fetch project' + error);
+}
+---
+
+<div class="flex flex-wrap justify-evenly items-center gap-8">
+	{
+		data.map((item) => (
+			<div class=" flex-col items-center flex justify-center  ">
+				<img class="max-w-16 lg:max-w-32" src={item.thumbnail_url} />
+			</div>
+		))
+	}
+</div>
