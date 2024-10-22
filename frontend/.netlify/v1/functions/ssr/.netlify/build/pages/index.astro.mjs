@@ -1,7 +1,7 @@
 import { c as createComponent, r as renderTemplate, m as maybeRenderHead, a as addAttribute, d as renderComponent } from '../chunks/astro/server_BzMAJ5Fn.mjs';
 import 'kleur/colors';
-import { $ as $$RootLayout } from '../chunks/RootLayout_D7gIZcEu.mjs';
-import { b as $$SocialMediaButtonGroup, c as $$SocialMediaButton } from '../chunks/NavigationContainer_CqxY0d1C.mjs';
+import { $ as $$RootLayout } from '../chunks/RootLayout_B9Gcj5oa.mjs';
+import { b as $$SocialMediaButtonGroup, c as $$SocialMediaButton } from '../chunks/NavigationContainer_BwqY6oC1.mjs';
 /* empty css                                 */
 /* empty css                                   */
 import { $ as $$FeaturedProjectsGrid } from '../chunks/FeaturedProjectsGrid_DzV5VYJX.mjs';

@@ -2,7 +2,7 @@ import { c as createComponent, r as renderTemplate, a as addAttribute, e as rend
 import 'kleur/colors';
 import { s as supabase } from '../../chunks/supabase_C8GpD8xL.mjs';
 /* empty css                                      */
-import { $ as $$NavigationContainer, a as $$Icon } from '../../chunks/NavigationContainer_CqxY0d1C.mjs';
+import { $ as $$NavigationContainer, a as $$Icon } from '../../chunks/NavigationContainer_BwqY6oC1.mjs';
 import { jsxs, jsx } from 'react/jsx-runtime';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
