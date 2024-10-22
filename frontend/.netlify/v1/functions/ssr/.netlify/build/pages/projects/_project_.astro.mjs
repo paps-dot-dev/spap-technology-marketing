@@ -1,8 +1,8 @@
 import { c as createComponent, r as renderTemplate, a as addAttribute, e as renderHead, d as renderComponent, f as renderSlot, b as createAstro, m as maybeRenderHead } from '../../chunks/astro/server_BzMAJ5Fn.mjs';
 import 'kleur/colors';
 import { s as supabase } from '../../chunks/supabase_C8GpD8xL.mjs';
-/* empty css                                      */
-import { $ as $$NavigationContainer, a as $$Icon } from '../../chunks/NavigationContainer_BwqY6oC1.mjs';
+/* empty css                                        */
+import { $ as $$NavigationContainer, a as $$Icon } from '../../chunks/NavigationContainer_DwxoR03E.mjs';
 import { jsxs, jsx } from 'react/jsx-runtime';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
