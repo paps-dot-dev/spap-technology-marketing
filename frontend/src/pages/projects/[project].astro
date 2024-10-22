@@ -38,14 +38,24 @@ if (error) {
 				<div
 					class="bg-gradient-to-r from-accent-primary/75 to-accent-pop/75 p-10 lg:p-32 rounded-xl"
 				>
-					<img
+					<video
+						autoplay
+						muted
+						playsinline
+						loop
 						class="w-full object-cover rounded-xl"
 						src={data.thumbnail_url
 							? data.thumbnail_url
 							: 'https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/branding/logos/SPAP%20Logos/Vertical/PNG/White_Vertical%20Lockup_SPAP.png'}
-					/>
+					></video>
 				</div>
+				<h2 class="lg:text-7xl text-4xl text-center font-extralight py-8">
+					{data.project_name} - {data.company_name}
+				</h2>
+				<h3 class="text-center text-sm">{data.card_description}</h3>
 			</div>
+
+			<div></div>
 			<div
 				id="project-overview"
 				class="bg-gradient-to-br from-accent-primary/75 to-accent-pop/75 rounded-xl py-20 px-5 my-8 lg:w-3/4 mx-auto"
@@ -56,7 +66,7 @@ if (error) {
 				<p
 					class="text-center font-bold text-4xl bg-gradient-to-r from-accent-primary to-accent-pop bg-clip-text text-transparent"
 				>
-					Ready to Start Your Project?
+					Ready to Get Results Like {data.company_name}?
 				</p>
 				<a
 					href="/contact"
@@ -64,7 +74,7 @@ if (error) {
 					>Contact Me</a
 				>
 			</div>
-			<RelatedProjects tags={data.tags} />
+			<!-- <RelatedProjects tags={data.tags} /> -->
 		</div>
 	</section>
 </ProjectLayout>

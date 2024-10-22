@@ -51,15 +51,20 @@ import SocialMediaButtonGroup from './ui/SocialMediaButtonGroup.astro';
 
 <script>
 	const openNav = () => {
-		document.getElementById('mobile-nav').showModal();
+		const mobileNav = document.getElementById(
+			'mobile-nav'
+		) as HTMLDialogElement;
+		mobileNav.showModal();
 	};
-	document
-		.getElementById('hamburger-menu')
-		.addEventListener('click', () => openNav());
 
 	document
-		.getElementById('close-nav')
-		.addEventListener('click', () =>
-			document.getElementById('mobile-nav').close()
-		);
+		.getElementById('hamburger-menu')
+		?.addEventListener('click', () => openNav());
+
+	document.getElementById('close-nav')?.addEventListener('click', () => {
+		const mobileNav = document.getElementById(
+			'mobile-nav'
+		) as HTMLDialogElement;
+		mobileNav.close();
+	});
 </script>

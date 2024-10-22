@@ -37,9 +37,16 @@ const RelatedProjects: React.FC<RelatedProjectsProps> = ({ tags }) => {
 		<div>
 			<p>Related Projects</p>
 			{/* Render related projects */}
-			{relatedProjects.map((project, index) => (
-				<div key={index}>{project.project_name}</div>
-			))}
+			{relatedProjects.map(
+				(
+					project: {
+						project_name: string;
+					},
+					index
+				) => (
+					<div key={index}>{project.project_name}</div>
+				)
+			)}
 		</div>
 	);
 };

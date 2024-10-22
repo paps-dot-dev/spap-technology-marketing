@@ -1,0 +1,97 @@
+---
+import RootLayout from '../layouts/RootLayout.astro';
+
+import SocialMediaButtonGroup from '../components/astro/ui/SocialMediaButtonGroup.astro';
+import '../index.css';
+
+import '../styles/globals.css';
+import SocialMediaButton from '@/components/astro/ui/SocialMediaButton.astro';
+import FeaturedProjectsGrid from '../components/astro/FeaturedProjectsGrid.astro';
+import TrustedCompaniesContainer from '@/components/astro/TrustedCompaniesContainer.astro';
+import ServicesContainer from '../components/react/ServicesContainer';
+---
+
+<RootLayout title="Modern Web Solutions for Entrepreneurs & Creators">
+	<!-- Video Background -->
+	<section
+		id="hero"
+		class="relative w-full h-screen overflow-hidden rounded-xl"
+	>
+		<video
+			class="absolute top-1/2 left-1/2 w-full h-full object-cover transform -translate-x-1/2 -translate-y-1/2 z-10"
+			src="https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/media/video/Abstract%20Background%20Video.mp4"
+			autoplay
+			muted
+			loop
+			playsinline></video>
+
+		<!-- Content on top of the video -->
+		<div
+			id="content-container"
+			class="relative z-20 bg-black/75 flex flex-col items-center lg:justify-center py-10 text-white px-4 h-full"
+		>
+			<h1
+				class="text-4xl lg:text-6xl font-bold lg:text-center mb-4 lg:order-1 lg:w-2/3 lowercase"
+			>
+				Unleash your creativity with the power of the modern web.
+			</h1>
+			<SocialMediaButtonGroup color="text-primary" />
+			<p
+				class="text-right pl-20 py-8 font-bold text-xl lg:order-2 lg:text-xl lowercase"
+			>
+				SPAP Technology crafts custom web solutions for <span
+					class="bg-gradient-to-r from-accent-primary to-accent-pop bg-clip-text text-transparent"
+					>creators & Entrepreneurs
+				</span>
+				that want <span class="text-accent-secondary underline"
+					>more than just a website.</span
+				>
+			</p>
+		</div>
+	</section>
+	<section
+		id="trusted-companies"
+		class="bg-background-primary min-h-[30vh] lg:min-h-[20vh] py-8 px-2"
+	>
+		<h2 class="text-text-primary text-3xl lg:text-4xl font-bold lg:px-2">
+			Trusted by these companies
+		</h2>
+		<TrustedCompaniesContainer />
+	</section>
+
+	<section id="featured-projects" class="min-h-screen bg-text-primary py-8">
+		<div
+			class="flex justify-between items-center border-b-2 py-4 border-background-primary px-2 mx-2"
+		>
+			<h2 class="text-3xl lg:text-4xl font-bold">featured projects</h2>
+			<div class="w-24">
+				<SocialMediaButton
+					buttonData={{
+						iconRef: 'mdi:github',
+						href: 'https://github.com/paps-dot-dev',
+						color: 'background-primary',
+					}}
+				/>
+			</div>
+		</div>
+		<FeaturedProjectsGrid />
+	</section>
+
+	<section
+		id="services"
+		class="min-h-screen bg-gradient-to-r from-background-primary via-accent-primary to-background-primary/20 text-text-primary py-8 px-2 flex justify-center items-center flex-col"
+	>
+		<h2
+			class="text-5xl lg:text-7xl py-4 font-bold lowercase bg-gradient-to-r from-text-primary to-accent-primary bg-clip-text text-transparent"
+		>
+			go beyond a normal website 🚀
+		</h2>
+		<h3 class="font-extralight lg:text-4xl">Some of the Services I provide.</h3>
+		<ServicesContainer client:visible />
+		<a
+			href="/contact"
+			class="w-1/4 p-5 cursor-pointer bg-accent-pop hover:border-2 hover:border-accent-pop hover:bg-transparent rounded-xl text-center font-bold hover:scale-125 duration-200 ease-linear"
+			>Let's Chat</a
+		>
+	</section>
+</RootLayout>

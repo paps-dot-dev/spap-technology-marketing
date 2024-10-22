@@ -7,12 +7,14 @@ interface ProjectDetailsDropdownProps {
 	title: string;
 	data: string;
 	media: string;
+	technologies: any;
 }
 
 const ProjectDetailsDropdown: FC<ProjectDetailsDropdownProps> = ({
 	title,
 	data,
 	media,
+	technologies,
 }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
@@ -54,7 +56,7 @@ const ProjectDetailsDropdown: FC<ProjectDetailsDropdownProps> = ({
 							opacity: isOpen ? [0, 0.5, , 1] : [0],
 						}}></motion.div>
 					<motion.p
-						className="py-4"
+						className="py-4 normal-case text-left"
 						animate={{
 							translateY: isOpen ? [-50, 0] : 0,
 							opacity: isOpen ? [0, 1] : [0],
@@ -62,6 +64,34 @@ const ProjectDetailsDropdown: FC<ProjectDetailsDropdownProps> = ({
 						{data}
 					</motion.p>
 				</motion.div>
+			)}
+
+			{isOpen && technologies && (
+				<div className="grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4">
+					{technologies.map(
+						(
+							item: {
+								name: string;
+								thumbnail_url: string;
+							},
+							idx
+						) => (
+							<div
+								key={idx}
+								title={item.name}
+								className="flex relative flex-col items-center justify-center bg-accent-pop/80 rounded-xl p-5 lg:p-10 group hover:bg-black/50">
+								<img
+									className="object-cover w-16 lg:w-32 group-hover:opacity-20"
+									src={item.thumbnail_url}
+									loading="lazy"
+								/>
+								<p className="bottom-5 absolute right-5 font-extralight text-3xl hidden group-hover:block group-hover:transition-all duration-200 ease-linear">
+									{item.name}
+								</p>
+							</div>
+						)
+					)}
+				</div>
 			)}
 		</motion.button>
 	);

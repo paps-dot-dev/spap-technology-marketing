@@ -10,7 +10,12 @@ import {
 import { FaTimes } from 'react-icons/fa';
 
 interface ProjectCardProps {
-	project: object;
+	project: {
+		thumbnail_url: string;
+		project_name: string;
+		card_description: string;
+		tags: [string];
+	};
 	key: Int16Array;
 }
 
@@ -28,14 +33,17 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
 				exit={{ opacity: 0, z: 10, scale: 0.5 }}
 				transition={{ delay: 0.1, stiffness: 0.2 }}
 				className="card base-400 w-96 max-h-[500px] lg:w-full shadow-xl z-10 relative rounded-xl">
-				<img
+				<video
+					autoPlay
+					loop
+					muted
+					playsInline
 					className="p-10 z-10 object-cover w-full h-full"
 					src={
 						project.thumbnail_url
 							? project.thumbnail_url
 							: 'https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/branding/logos/SPAP%20Logos/Icon/PNG/Black_Icon%20Lockup_SPAP.png'
-					}
-				/>
+					}></video>
 				{hovered && (
 					<motion.div
 						animate={{
@@ -70,9 +78,11 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
 				<p className="font-semibold text-background-primary text-xl lg:text-4xl">
 					{project.project_name}
 				</p>
-				<p className="text-xs font-extralight">{project.project_details}</p>
-				<div className="flex items-center py-1">
-					{project.tags?.map((tag) => (
+				<p className="text-xs font-extralight py-2">
+					{project.card_description}
+				</p>
+				<div className="flex items-center py-1 gap-2">
+					{project.tags?.map((tag: string) => (
 						<p
 							className={`bg-accent-primary text-text-primary rounded-full p-1 w-20 text-center text-xs`}>
 							{tag}

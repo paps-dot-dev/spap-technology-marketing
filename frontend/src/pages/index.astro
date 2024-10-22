@@ -7,6 +7,8 @@ import '../index.css';
 import '../styles/globals.css';
 import SocialMediaButton from '@/components/astro/ui/SocialMediaButton.astro';
 import FeaturedProjectsGrid from '../components/astro/FeaturedProjectsGrid.astro';
+import TrustedCompaniesContainer from '@/components/astro/TrustedCompaniesContainer.astro';
+import ServicesContainer from '../components/react/ServicesContainer';
 ---
 
 <RootLayout title="Modern Web Solutions for Entrepreneurs & Creators">
@@ -47,6 +49,16 @@ import FeaturedProjectsGrid from '../components/astro/FeaturedProjectsGrid.astro
 			</p>
 		</div>
 	</section>
+	<section
+		id="trusted-companies"
+		class="bg-background-primary min-h-[30vh] lg:min-h-[20vh] py-8 px-2"
+	>
+		<h2 class="text-text-primary text-3xl lg:text-4xl font-bold lg:px-2">
+			Trusted by these companies
+		</h2>
+		<TrustedCompaniesContainer />
+	</section>
+
 	<section id="featured-projects" class="min-h-screen bg-text-primary py-8">
 		<div
 			class="flex justify-between items-center border-b-2 py-4 border-background-primary px-2 mx-2"
@@ -63,5 +75,23 @@ import FeaturedProjectsGrid from '../components/astro/FeaturedProjectsGrid.astro
 			</div>
 		</div>
 		<FeaturedProjectsGrid />
+	</section>
+
+	<section
+		id="services"
+		class="min-h-screen bg-gradient-to-r from-background-primary via-accent-primary to-background-primary/20 text-text-primary py-8 px-2 flex justify-center items-center flex-col"
+	>
+		<h2
+			class="text-5xl lg:text-7xl py-4 font-bold lowercase bg-gradient-to-r from-text-primary to-accent-primary bg-clip-text text-transparent"
+		>
+			go beyond a normal website 🚀
+		</h2>
+		<h3 class="font-extralight lg:text-4xl">Some of the Services I provide.</h3>
+		<ServicesContainer client:visible />
+		<a
+			href="/contact"
+			class="w-1/4 p-5 cursor-pointer bg-accent-pop hover:border-2 hover:border-accent-pop hover:bg-transparent rounded-xl text-center font-bold hover:scale-125 duration-200 ease-linear"
+			>Let's Chat</a
+		>
 	</section>
 </RootLayout>

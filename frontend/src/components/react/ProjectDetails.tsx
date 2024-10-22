@@ -7,23 +7,27 @@ const ProjectDetails = ({ data }) => {
 		<div className="text-background-primary lowercase space-y-4">
 			<ProjectDetailsDropdown
 				title={'The Problem'}
-				data={'some problem will be listed here'}
+				data={data.problem_description}
 				media=""
+				technologies=""
 			/>
 			<ProjectDetailsDropdown
 				title={'The Process'}
-				data={'some problem will be listed here'}
+				data={data.process_description}
 				media=""
+				technologies=""
 			/>
 			<ProjectDetailsDropdown
 				title={'The Solution'}
-				data={'some problem will be listed here'}
+				data={data.solution_description}
 				media=""
+				technologies=""
 			/>
 			<ProjectDetailsDropdown
 				title={'The tech'}
-				data={'some problem will be listed here'}
+				data={'Here is the list of technologies I used on this project'}
 				media=""
+				technologies={data.technology_description}
 			/>
 		</div>
 	);
