@@ -16,7 +16,7 @@ export const POST = async ({ request }) => {
 		let newSubData = {
 			email: data.email,
 			firstName: data.firstName,
-			groups: ['bmGZOp', 'e53yQx'],
+			groups: ['e53yQx', 'ejLnM5'],
 			trigger_automation: true,
 		};
 
