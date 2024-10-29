@@ -38,6 +38,23 @@ const ContactForm: React.FC = () => {
 		}));
 	};
 
+	const handleNewNotionLead = async () => {
+		try {
+			const response = await fetch('/api/notion', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(formData),
+			});
+
+			if (!response.ok) {
+				const errorMessage = await response.text(); // Get the raw response text for debugging
+				throw new Error(`Failed to submit form: ${errorMessage}`);
+			}
+		} catch (error) {}
+	};
+
 	const handleNewsletterSubscribe = async () => {
 		if (formData.electronicConsent) {
 			try {
@@ -64,6 +81,7 @@ const ContactForm: React.FC = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		handleNewNotionLead();
 
 		try {
 			if (formData.signUpForNewsletter === 'Yes') {
