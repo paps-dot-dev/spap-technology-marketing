@@ -1,0 +1,12 @@
+---
+import RootLayout from "../../layouts/RootLayout.astro"
+import ReferralForm from "../../components/react/ReferralForm.tsx"
+
+const {email} = Astro.params
+---
+<RootLayout>
+    <main>
+        <h1 class="bg-gradient-to-r from-accent-pop to-accent-primary bg-clip-text text-transparent text-4xl lowercase font-bold">Loved Your Experience? Refer A Friend!</h1>
+    </main>
+    <ReferralForm client:load referEmail={email} />
+</RootLayout>
