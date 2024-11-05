@@ -10,13 +10,13 @@ const services = [
 		icon: MdWeb,
 	},
 	{
-		name: 'Web Application',
+		name: 'Web Applications',
 		description:
 			"Now we're thinking bigger. As a full stack developer, I have the tools and knowledge necessary to bring your next app to life, from client to server and everything in between.",
 		icon: MdMouse,
 	},
 	{
-		name: 'Mobile Application',
+		name: 'Mobile Applications',
 		description:
 			'Your users want to reach you beyond the desktop. With experience in React Native, Kotlin Compose, and Swift, let SPAP Technology craft a mobile experience that your customers will love.',
 		icon: MdPhoneIphone,
@@ -31,7 +31,7 @@ const services = [
 
 const ServicesContainer = () => {
 	return (
-		<motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-2 lg:w-1/2 lg:p-20 ">
+		<motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-2 lg:w-3/4 lg:p-20 ">
 			{services.map((service, idx) => (
 				<motion.div
 					initial={{ scale: 0.2, opacity: 0.1 }}
@@ -43,7 +43,7 @@ const ServicesContainer = () => {
 						<service.icon />
 					</div>
 
-					<p className="text-2xl lg:text-5xl lg:p-2 font-bold lowercase bg-gradient-to-r from-accent-primary to-accent-pop bg-clip-text text-transparent">
+					<p className="text-2xl lg:text-5xl lg:py-2 font-bold lowercase bg-gradient-to-r from-accent-primary to-accent-pop bg-clip-text text-transparent">
 						{service.name}
 					</p>
 					<p className="text-xs lg:text-lg">{service.description}</p>
