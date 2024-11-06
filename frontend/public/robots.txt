@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://spaptechnology.com/sitemap-index.xml

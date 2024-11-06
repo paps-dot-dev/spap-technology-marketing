@@ -1,5 +1,6 @@
 ---
 import RootLayout from '../layouts/RootLayout.astro';
+import { supabase } from '@/db/supabase';
 
 import SocialMediaButtonGroup from '../components/astro/ui/SocialMediaButtonGroup.astro';
 
@@ -8,9 +9,23 @@ import SocialMediaButton from '@/components/astro/ui/SocialMediaButton.astro';
 import FeaturedProjectsGrid from '../components/astro/FeaturedProjectsGrid.astro';
 import TrustedCompaniesContainer from '@/components/astro/TrustedCompaniesContainer.astro';
 import ServicesContainer from '../components/react/ServicesContainer';
+import TestimonialsContainer from '../components/react/TestimonialsContainer';
+
+const { data, error } = await supabase.from('testimonials').select('*');
+
+if (error) {
+	throw new Error('Failed to fetch project' + error);
+}
+
+let testimonials = data;
 ---
 
-<RootLayout title="Modern Web Solutions for Entrepreneurs & Creators">
+<RootLayout
+	title="Amplified Web Presence for Creative Entrpreneurs"
+	description="SPAP Technology Solutions specializes in crafting solutions for creative entrepreneurs including website development, app development,business tools, integrations, copywriting, and more."
+	imageRef="https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/branding/logos/SPAP%20Logos/Vertical/PNG/White_Vertical%20Lockup_SPAP.png"
+	urlSlug=""
+>
 	<!-- Video Background -->
 	<section
 		id="hero"
@@ -38,7 +53,7 @@ import ServicesContainer from '../components/react/ServicesContainer';
 			<p
 				class="text-right pl-20 py-8 font-bold text-xl lg:order-2 lg:text-xl lowercase"
 			>
-				SPAP Technology crafts custom web solutions for <span
+				SPAP Technology Solutions builds custom web solutions for <span
 					class="bg-gradient-to-r from-accent-primary to-accent-pop bg-clip-text text-transparent"
 					>creators & Entrepreneurs
 				</span>
@@ -46,6 +61,9 @@ import ServicesContainer from '../components/react/ServicesContainer';
 					>more than just a website.</span
 				>
 			</p>
+			<div class="order-5 max-w-screen">
+				<TestimonialsContainer testimonials={testimonials} client:load />
+			</div>
 		</div>
 	</section>
 	<section
