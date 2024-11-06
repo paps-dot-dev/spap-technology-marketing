@@ -5,6 +5,7 @@ import ProjectLayout from '../../layouts/ProjectLayout.astro';
 import ProjectDetails from '../../components/react/ProjectDetails';
 import RelatedProjects from '../../components/react/RelatedProjects';
 import { Icon } from 'astro-icon/components';
+import RootLayout from '@/layouts/RootLayout.astro';
 
 const { project } = Astro.params;
 
@@ -19,7 +20,12 @@ if (error) {
 }
 ---
 
-<ProjectLayout>
+<RootLayout
+	title={`${data.project_name} | SPAP Technology Solutions`}
+	description={data.card_description}
+	imageRef={data.thumbnail_url}
+	urlSlug={project}
+>
 	<section class="min-h-screen w-screen relative text-text-primary">
 		<h1
 			class="text-7xl w-fit lg:text-[10rem] lg:w-1/2 max-w-screen font-bold opacity-20"
@@ -77,4 +83,4 @@ if (error) {
 			<!-- <RelatedProjects tags={data.tags} /> -->
 		</div>
 	</section>
-</ProjectLayout>
+</RootLayout>
