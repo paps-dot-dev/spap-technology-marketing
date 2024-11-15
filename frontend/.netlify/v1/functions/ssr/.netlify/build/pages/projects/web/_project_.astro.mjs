@@ -6,7 +6,7 @@ import { jsxs, jsx } from 'react/jsx-runtime';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MdArrowDownward } from 'react-icons/md';
-import { a as $$Icon, $ as $$RootLayout } from '../../../chunks/RootLayout_B9PyH6d-.mjs';
+import { a as $$Icon, $ as $$RootLayout } from '../../../chunks/RootLayout_DFsQA0li.mjs';
 export { renderers } from '../../../renderers.mjs';
 
 const ProjectDetailsDropdown = ({
