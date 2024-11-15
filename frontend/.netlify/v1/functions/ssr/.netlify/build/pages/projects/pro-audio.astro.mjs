@@ -1,6 +1,6 @@
 import { a as createComponent, r as renderTemplate, m as maybeRenderHead, d as renderComponent } from '../../chunks/astro/server_BKCQEo5J.mjs';
 import 'kleur/colors';
-import { $ as $$RootLayout } from '../../chunks/RootLayout_CLCoi8gq.mjs';
+import { $ as $$RootLayout } from '../../chunks/RootLayout_B9PyH6d-.mjs';
 import { s as supabase } from '../../chunks/supabase_C8GpD8xL.mjs';
 import { jsxs, jsx } from 'react/jsx-runtime';
 import 'react';

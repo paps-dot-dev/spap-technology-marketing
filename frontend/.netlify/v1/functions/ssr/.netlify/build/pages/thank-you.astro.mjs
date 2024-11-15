@@ -1,8 +1,8 @@
 import { a as createComponent, r as renderTemplate, d as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_BKCQEo5J.mjs';
 import 'kleur/colors';
-import { $ as $$RootLayout } from '../chunks/RootLayout_CLCoi8gq.mjs';
+import { $ as $$RootLayout } from '../chunks/RootLayout_B9PyH6d-.mjs';
 /* empty css                                   */
-import { $ as $$SocialMediaButtonGroup } from '../chunks/SocialMediaButtonGroup_DAUaB3gC.mjs';
+import { $ as $$SocialMediaButtonGroup } from '../chunks/SocialMediaButtonGroup_BqKmX9QV.mjs';
 import { $ as $$FeaturedProjectsGrid } from '../chunks/FeaturedProjectsGrid_DhfVGzqJ.mjs';
 export { renderers } from '../renderers.mjs';
 

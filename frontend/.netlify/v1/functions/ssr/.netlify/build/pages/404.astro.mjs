@@ -1,6 +1,6 @@
 import { a as createComponent, r as renderTemplate, d as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_BKCQEo5J.mjs';
 import 'kleur/colors';
-import { $ as $$RootLayout } from '../chunks/RootLayout_CLCoi8gq.mjs';
+import { $ as $$RootLayout } from '../chunks/RootLayout_B9PyH6d-.mjs';
 export { renderers } from '../renderers.mjs';
 
 var __freeze = Object.freeze;

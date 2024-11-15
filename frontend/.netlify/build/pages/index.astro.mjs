@@ -1,7 +1,7 @@
 import { a as createComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute, d as renderComponent } from '../chunks/astro/server_BKCQEo5J.mjs';
 import 'kleur/colors';
-import { B as Button, $ as $$RootLayout } from '../chunks/RootLayout_CLCoi8gq.mjs';
-import { $ as $$SocialMediaButtonGroup } from '../chunks/SocialMediaButtonGroup_DAUaB3gC.mjs';
+import { B as Button, $ as $$RootLayout } from '../chunks/RootLayout_B9PyH6d-.mjs';
+import { $ as $$SocialMediaButtonGroup } from '../chunks/SocialMediaButtonGroup_BqKmX9QV.mjs';
 import 'clsx';
 import { s as supabase } from '../chunks/supabase_C8GpD8xL.mjs';
 import { jsx, jsxs, Fragment } from 'react/jsx-runtime';
