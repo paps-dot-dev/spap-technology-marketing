@@ -7,7 +7,10 @@ interface PostTypes {
 	data: [];
 }
 const BlogContainer = () => {
-	const [posts, setPosts] = React.useState<PostTypes>(null);
+	const [posts, setPosts] = React.useState<PostTypes>({
+		total_results: 0,
+		data: [],
+	});
 	const fetchBlogPosts = async () => {
 		try {
 			const response = await fetch('/api/blog', {
@@ -53,7 +56,7 @@ const BlogContainer = () => {
 							<motion.li
 								initial={{ translateX: -100 }}
 								animate={{ translateX: 0 }}
-								className="w-96 relative rounded-xl group"
+								className="w-96 relative rounded-xl group bg-primary"
 								key={post.id}>
 								<a target={'_blank'} href={post.web_url}>
 									<img

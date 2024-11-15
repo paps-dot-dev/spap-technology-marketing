@@ -1,10 +1,10 @@
 import { a as createComponent, r as renderTemplate, d as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_BKCQEo5J.mjs';
 import 'kleur/colors';
-import { c as cn, B as Button, $ as $$RootLayout } from '../chunks/RootLayout_Cm04yUyp.mjs';
+import { c as cn, B as Button, $ as $$RootLayout } from '../chunks/RootLayout_CLCoi8gq.mjs';
 import { jsxs, jsx } from 'react/jsx-runtime';
 import * as React from 'react';
 import React__default from 'react';
-import { I as Input } from '../chunks/input_lCx0ez7D.mjs';
+import { I as Input } from '../chunks/input_BWNmnRZi.mjs';
 import * as SliderPrimitive from '@radix-ui/react-slider';
 import 'clsx';
 import { MdStar, MdStarBorder } from 'react-icons/md';

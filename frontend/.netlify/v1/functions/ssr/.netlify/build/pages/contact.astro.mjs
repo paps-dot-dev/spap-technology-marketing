@@ -1,6 +1,6 @@
 import { a as createComponent, r as renderTemplate, d as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_BKCQEo5J.mjs';
 import 'kleur/colors';
-import { B as Button, $ as $$RootLayout } from '../chunks/RootLayout_Cm04yUyp.mjs';
+import { B as Button, $ as $$RootLayout } from '../chunks/RootLayout_CLCoi8gq.mjs';
 import { jsx, jsxs } from 'react/jsx-runtime';
 import { useState } from 'react';
 /* empty css                                   */
