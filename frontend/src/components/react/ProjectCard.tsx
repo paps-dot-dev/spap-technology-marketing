@@ -64,18 +64,18 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
 							View Project
 						</motion.p>
 						<motion.a
-							href={`/projects/${project.project_name}`}
+							href={`/projects/web/${project.project_name}`}
 							initial={{ scale: 0.5, opacity: 0 }}
 							whileInView={{ opacity: 1, scale: 1 }}
 							whileTap={{ scale: 1.2 }}
-							className=" text-5xl px-16 border-text-primary border-2 rounded-full text-accent-primary hover:text-accent-pop group hover:border-accent-pop">
+							className=" text-5xl px-16 border-white border-2 rounded-full text-accent-purple hover:text-accent-magenta group hover:border-accent-magenta">
 							<MdArrowForward className="group-hover:translate-x-16 duration-200 ease-linear" />
 						</motion.a>
 					</motion.div>
 				)}
 			</motion.div>
 			<div className="px-2 py-4">
-				<p className="font-semibold text-background-primary text-xl lg:text-4xl">
+				<p className="font-semibold text-white text-xl lg:text-4xl">
 					{project.project_name}
 				</p>
 				<p className="text-xs font-extralight py-2">

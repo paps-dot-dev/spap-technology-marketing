@@ -10,11 +10,11 @@ export default {
 				sm: 'calc(var(--radius) - 4px)',
 			},
 			colors: {
-				'background-primary': '#1E1E1E',
-				'text-primary': '#FFFFFF',
-				'accent-primary': '#5865F2',
-				'accent-secondary': '#33D1FF',
-				'accent-pop': '#FF6F91',
+				'primary': '#1A1A1A',
+				'secondary': '#2b2b2b',
+				'accent-green': '#00ff94',
+				'accent-magenta': '#ff0075',
+				'accent-purple': '#7f00ff'
 			},
 		},
 	},
