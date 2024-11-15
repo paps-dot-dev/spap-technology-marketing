@@ -1,32 +1,42 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import {MdApps, MdCode, MdEmail, MdMouse, MdOutlineMusicNote, MdPhoneIphone, MdWeb} from 'react-icons/md';
+import {
+	MdApps,
+	MdCode,
+	MdDataObject,
+	MdEmail,
+	MdMouse,
+	MdOutlineMusicNote,
+	MdPhoneIphone,
+	MdWeb
+} from 'react-icons/md';
 import { FaPencilAlt } from 'react-icons/fa';
 import { Button } from '../ui/button';
 
 const services = [
 	{
-		name: 'Websites & Apps',
-		description: 'With over 6 years of experience as a full stack developer, I build content-driven, high-impact websites that will help your brand dominate online presence.',
+		name: 'Websites',
+		description: ' I build content-driven, high-impact websites that will help your brand dominate online presence.',
+		icon: MdWeb,
+	},
+	{
+		name: 'Web & Mobile Applications',
+		description: 'With over 6 years of experience as a full stack developer, I can bring your next web or mobile app to life with the latest and greatest in web technology.',
 		icon: MdCode,
 	},
 	{
-		name: 'Pro Audio',
-		description:
-			'From producing your next single to setting up backing tracks for your live show, I bring more than a decade of recording experience to your next project',
-		icon: MdOutlineMusicNote,
+		name:'Backend + Database Architecture',
+		description:'Apps do not work well without a bulletproof backend. Let me look over your database structure, schemas and more to increase performance and user experience. ',
+		icon:MdDataObject
 	},
 
+
 	{
-		name: 'Online Marketing',
+		name: 'Marketing + Business Tools',
 		description: 'Passionate about helping creatives build their outreach, I provide consultation on the latest and greatest tools to do just that.',
 		icon: MdEmail,
 	},
-	{
-		name: 'Copywriting',
-		description: 'Communicate to your audience effectively with authentic, genuine copy.',
-		icon: FaPencilAlt,
-	},
+
 ];
 
 const ServicesContainer = () => {

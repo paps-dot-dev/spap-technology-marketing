@@ -3,7 +3,6 @@ import RootLayout from '../layouts/RootLayout.astro';
 import SocialMediaButtonGroup from '../components/astro/ui/SocialMediaButtonGroup.astro';
 import TrustedCompaniesContainer from '../components/astro/TrustedCompaniesContainer.astro';
 import ServicesContainer from '@/components/react/ServicesContainer';
-import ProAudioTabs from '../components/react/(pro-audio)/ProAudioTabs';
 import FeaturedTechCards from '@/components/react/FeaturedTechCards';
 import BlogContainer from '@/components/react/BlogContainer';
 ---
@@ -16,7 +15,7 @@ import BlogContainer from '@/components/react/BlogContainer';
 >
 	<section
 		id="hero"
-		class="relative w-screen h-screen overflow-hidden rounded-xl"
+		class="relative h-screen overflow-hidden rounded-xl"
 	>
 		<video
 			class="absolute top-1/2 left-1/2 w-full h-full object-cover transform -translate-x-1/2 -translate-y-1/2 z-10"
@@ -36,15 +35,16 @@ import BlogContainer from '@/components/react/BlogContainer';
 			>
 				Shawn Paps
 			</h1>
+			<h2>Web Developer | Web Designer | Data Management</h2>
 			<div class="order-3">
 				<SocialMediaButtonGroup color="text-primary" />
 			</div>
 			<p
 				class="text-right pb-8 font-bold text-xl md:text-center order-2 md:text-5xl lowercase"
 			>
-				Digital Media Developer for <span
+				Web Solutions Expert for <span
 					class="bg-gradient-to-r from-accent-magenta to-accent-purple bg-clip-text text-transparent"
-					>Artists & Creatives
+					>Creative Businesses.
 				</span>
 			</p>
 			<a
@@ -68,47 +68,47 @@ import BlogContainer from '@/components/react/BlogContainer';
 		<h2 class="text-7xl p-4">Services I Offer</h2>
 		<ServicesContainer client:visible />
 	</section>
-	<section
-		id="pro-audio"
-		class="flex flex-col md:flex-row min-h-screen w-screen mb-32"
-	>
-		<div class="p-2 md:min-w-[60%]" id="audio-copy">
-			<h2 class="text-7xl opacity-20">Pro Audio</h2>
-			<h3 class="text-5xl w-2/3">
-				I have over a decade of experience recording & mixing audio.
-			</h3>
-			<div class="py-8 flex items-center text-xl">
-				<a
-					href="/contact"
-					class="p-5 bg-accent-magenta rounded-md px-16 hover:bg-white hover:text-accent-magenta transition"
-					>Connect With Me</a
-				>
-				<a
-					class="opacity-50 p-5 hover:opacity-100 transition"
-					href="/projects/pro-audio">See Who I've Worked With</a
-				>
-			</div>
-			<video
-				class="opacity-20 rounded-xl h-full w-full object-cover md:hidden"
-				src="https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/media/video/Shawn-Guitar.mp4"
-				autoplay
-				muted
-				loop
-				playsinline></video>
-			<div class="w-full">
-				<ProAudioTabs client:visible />
-			</div>
-		</div>
-		<div id="audio-image" class="min-h-screen hidden md:block">
-			<video
-				class="opacity-20 rounded-xl h-full w-full object-cover"
-				src="https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/media/video/Shawn-Guitar.mp4"
-				autoplay
-				muted
-				loop
-				playsinline></video>
-		</div>
-	</section>
+	<!--<section-->
+	<!--	id="pro-audio"-->
+	<!--	class="flex flex-col md:flex-row min-h-screen  mb-32"-->
+	<!--&gt;-->
+	<!--	<div class="p-2 md:min-w-[60%]" id="audio-copy">-->
+	<!--		<h2 class="text-7xl opacity-20">Pro Audio</h2>-->
+	<!--		<h3 class="text-5xl w-2/3">-->
+	<!--			I have over a decade of experience recording & mixing audio.-->
+	<!--		</h3>-->
+	<!--		<div class="py-8 flex items-center text-xl">-->
+	<!--			<a-->
+	<!--				href="/contact"-->
+	<!--				class="p-5 bg-accent-magenta rounded-md px-16 hover:bg-white hover:text-accent-magenta transition"-->
+	<!--				>Connect With Me</a-->
+	<!--			>-->
+	<!--			<a-->
+	<!--				class="opacity-50 p-5 hover:opacity-100 transition"-->
+	<!--				href="/projects/pro-audio">See Who I've Worked With</a-->
+	<!--			>-->
+	<!--		</div>-->
+	<!--		<video-->
+	<!--			class="opacity-20 rounded-xl h-full w-full object-cover md:hidden"-->
+	<!--			src="https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/media/video/Shawn-Guitar.mp4"-->
+	<!--			autoplay-->
+	<!--			muted-->
+	<!--			loop-->
+	<!--			playsinline></video>-->
+	<!--		<div class="w-full">-->
+	<!--			<ProAudioTabs client:visible />-->
+	<!--		</div>-->
+	<!--	</div>-->
+	<!--	<div id="audio-image" class="min-h-screen hidden md:block">-->
+	<!--		<video-->
+	<!--			class="opacity-20 rounded-xl h-full w-full object-cover"-->
+	<!--			src="https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/media/video/Shawn-Guitar.mp4"-->
+	<!--			autoplay-->
+	<!--			muted-->
+	<!--			loop-->
+	<!--			playsinline></video>-->
+	<!--	</div>-->
+	<!--</section>-->
 	<section id="web-solutions" class="p-2 min-h-screen">
 		<h2 class="text-7xl opacity-20 text-right">Web Solutions</h2>
 		<div class="flex flex-col md:flex-row md:justify-between gap-8">

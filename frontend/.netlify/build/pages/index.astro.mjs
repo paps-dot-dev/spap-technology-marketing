@@ -1,15 +1,13 @@
 import { a as createComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute, d as renderComponent } from '../chunks/astro/server_BKCQEo5J.mjs';
 import 'kleur/colors';
-import { B as Button, $ as $$RootLayout } from '../chunks/RootLayout_B9PyH6d-.mjs';
-import { $ as $$SocialMediaButtonGroup } from '../chunks/SocialMediaButtonGroup_BqKmX9QV.mjs';
+import { B as Button, $ as $$RootLayout } from '../chunks/RootLayout_DFsQA0li.mjs';
+import { $ as $$SocialMediaButtonGroup } from '../chunks/SocialMediaButtonGroup_DDw1iZVO.mjs';
 import 'clsx';
 import { s as supabase } from '../chunks/supabase_C8GpD8xL.mjs';
-import { jsx, jsxs, Fragment } from 'react/jsx-runtime';
-import React__default, { useState, useEffect } from 'react';
+import { jsx, jsxs } from 'react/jsx-runtime';
+import React__default, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { MdCode, MdOutlineMusicNote, MdEmail } from 'react-icons/md';
-import { FaPencilAlt } from 'react-icons/fa';
-import { P as ProAudioProjectCard } from '../chunks/ProAudioProjectCard_yxBxOsLY.mjs';
+import { MdWeb, MdCode, MdDataObject, MdEmail } from 'react-icons/md';
 export { renderers } from '../renderers.mjs';
 
 const $$TrustedCompaniesContainer = createComponent(async ($$result, $$props, $$slots) => {
@@ -22,24 +20,24 @@ const $$TrustedCompaniesContainer = createComponent(async ($$result, $$props, $$
 
 const services = [
   {
-    name: "Websites & Apps",
-    description: "With over 6 years of experience as a full stack developer, I build content-driven, high-impact websites that will help your brand dominate online presence.",
+    name: "Websites",
+    description: " I build content-driven, high-impact websites that will help your brand dominate online presence.",
+    icon: MdWeb
+  },
+  {
+    name: "Web & Mobile Applications",
+    description: "With over 6 years of experience as a full stack developer, I can bring your next web or mobile app to life with the latest and greatest in web technology.",
     icon: MdCode
   },
   {
-    name: "Pro Audio",
-    description: "From producing your next single to setting up backing tracks for your live show, I bring more than a decade of recording experience to your next project",
-    icon: MdOutlineMusicNote
+    name: "Backend + Database Architecture",
+    description: "Apps do not work well without a bulletproof backend. Let me look over your database structure, schemas and more to increase performance and user experience. ",
+    icon: MdDataObject
   },
   {
-    name: "Online Marketing",
+    name: "Marketing + Business Tools",
     description: "Passionate about helping creatives build their outreach, I provide consultation on the latest and greatest tools to do just that.",
     icon: MdEmail
-  },
-  {
-    name: "Copywriting",
-    description: "Communicate to your audience effectively with authentic, genuine copy.",
-    icon: FaPencilAlt
   }
 ];
 const ServicesContainer = () => {
@@ -59,70 +57,6 @@ const ServicesContainer = () => {
     },
     idx
   )) });
-};
-
-const ProAudioCard = ({ service }) => {
-  const [audioProjects, setAudioProjects] = useState([]);
-  const fetchAudioProjects = async () => {
-    const response = await fetch(`/api/projects/audio`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      }
-    });
-    const data = await response.json();
-    if (data) {
-      const filteredData = data.filter((item) => item.type == service.type);
-      setAudioProjects(filteredData);
-    }
-  };
-  useEffect(() => {
-    fetchAudioProjects();
-  }, [service]);
-  console.log(audioProjects);
-  return /* @__PURE__ */ jsxs(Fragment, { children: [
-    /* @__PURE__ */ jsxs("div", { className: "text-4xl w-2/3 space-y-2 py-8", children: [
-      /* @__PURE__ */ jsx("p", { children: service.overview }),
-      /* @__PURE__ */ jsx("p", { children: service.description })
-    ] }),
-    /* @__PURE__ */ jsx("div", { className: "flex items-center gap-4", children: audioProjects.map((item) => /* @__PURE__ */ jsx(ProAudioProjectCard, { data: item })) })
-  ] });
-};
-
-const serviceScreens = [
-  {
-    name: "Remote Producing",
-    overview: "It is becoming more  common for musicians to start production on a track prior to working with a producer.",
-    description: " I provide Remote Producing & songwriting services to help you take your record to the next level.",
-    type: "production"
-  },
-  {
-    name: "Mixing",
-    overview: "As an artist, your product is a direct reflection of how seriously you take your craft.",
-    description: " I provide Mixing services to add clarity, punch, and allow your performance to shine in your next song.",
-    type: "mixing"
-  },
-  {
-    name: "Session Guitar",
-    overview: "Need a guitar player on your next track? Let me track on your next record. ",
-    description: "I am a classically trained guitar player with over 20 years of experience in the studio and playing live.",
-    type: "session"
-  },
-  {
-    name: "Live Show + Backtracks",
-    overview: "The industry standard for a live show is changing. More and more artists are enhancing their live productions.",
-    description: "I can craft your live productions. Whether it be editing stems, programming midi for tone changes, click track narration, or something else-- I got you. ",
-    type: "backtracks"
-  }
-];
-
-const ProAudioTabs = () => {
-  const [activeTab, setActiveTab] = useState(serviceScreens[0]);
-  return /* @__PURE__ */ jsxs("div", { className: "w-full py-16", children: [
-    /* @__PURE__ */ jsx("nav", { className: "w-full", children: /* @__PURE__ */ jsx("ul", { className: "flex justify-between items-center gap-4 w-full text-xl md:text-4xl", children: serviceScreens.map((service) => /* @__PURE__ */ jsx("li", { onClick: () => setActiveTab(service), className: activeTab.name == service.name ? "opacity-100 border-b-2 border-accent-magenta p-2 transition" : "opacity-50 transition hover:opacity-100 cursor-pointer", children: service.name }, service.name)) }) }),
-    /* @__PURE__ */ jsx("div", { className: "py-8", children: /* @__PURE__ */ jsx(ProAudioCard, { service: activeTab }) })
-  ] });
 };
 
 const FeaturedTechCards = () => {
@@ -188,13 +122,11 @@ var __defProp = Object.defineProperty;
 var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(cooked.slice()) }));
 var _a;
 const $$Index = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate(_a || (_a = __template(["", ' <script type="text/javascript" async src="https://embeds.beehiiv.com/attribution.js"><\/script>'])), renderComponent($$result, "RootLayout", $$RootLayout, { "title": "Amplified Web Presence for Creative Entrpreneurs", "description": "SPAP Technology Solutions specializes in crafting solutions for creative entrepreneurs including website development, app development,business tools, integrations, copywriting, and more.", "imageRef": "https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/branding/logos/SPAP%20Logos/Vertical/PNG/White_Vertical%20Lockup_SPAP.png", "urlSlug": "/" }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<section id="hero" class="relative w-screen h-screen overflow-hidden rounded-xl"> <video class="absolute top-1/2 left-1/2 w-full h-full object-cover transform -translate-x-1/2 -translate-y-1/2 z-10" src="https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/media/video/Black%20Video%201920x1080.mp4?t=2024-11-15T06%3A35%3A09.659Z" autoplay muted loop playsinline></video> <!-- Content on top of the video --> <div id="content-container" class="relative z-20 bg-black/25 flex flex-col items-center justify-center py-10 text-white px-4 h-full"> <h1 class="text-7xl font-semibold md:text-[8rem] md:text-center order-1 md:w-2/3 lowercase">
+  return renderTemplate(_a || (_a = __template(["", ' <script type="text/javascript" async src="https://embeds.beehiiv.com/attribution.js"><\/script>'])), renderComponent($$result, "RootLayout", $$RootLayout, { "title": "Amplified Web Presence for Creative Entrpreneurs", "description": "SPAP Technology Solutions specializes in crafting solutions for creative entrepreneurs including website development, app development,business tools, integrations, copywriting, and more.", "imageRef": "https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/branding/logos/SPAP%20Logos/Vertical/PNG/White_Vertical%20Lockup_SPAP.png", "urlSlug": "/" }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<section id="hero" class="relative h-screen overflow-hidden rounded-xl"> <video class="absolute top-1/2 left-1/2 w-full h-full object-cover transform -translate-x-1/2 -translate-y-1/2 z-10" src="https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/media/video/Black%20Video%201920x1080.mp4?t=2024-11-15T06%3A35%3A09.659Z" autoplay muted loop playsinline></video> <!-- Content on top of the video --> <div id="content-container" class="relative z-20 bg-black/25 flex flex-col items-center justify-center py-10 text-white px-4 h-full"> <h1 class="text-7xl font-semibold md:text-[8rem] md:text-center order-1 md:w-2/3 lowercase">
 Shawn Paps
-</h1> <div class="order-3"> ${renderComponent($$result2, "SocialMediaButtonGroup", $$SocialMediaButtonGroup, { "color": "text-primary" })} </div> <p class="text-right pb-8 font-bold text-xl md:text-center order-2 md:text-5xl lowercase">
-Digital Media Developer for <span class="bg-gradient-to-r from-accent-magenta to-accent-purple bg-clip-text text-transparent">Artists & Creatives
-</span> </p> <a href="/#services" class="p-5 border-2 block text-center transition hover:bg-accent-magenta border-accent-magenta order-5 mt-8 w-1/2 rounded-md">Learn More</a> <!--<div class="order-5 max-w-screen">--> <!--    <TestimonialsContainer testimonials={testimonials} client:load />--> <!--</div>--> </div> </section> <section id="social-proof"> <div class="text-white flex flex-col items-center p-10"> <p class="text-2xl text-center">Trusted by these creative brands:</p> ${renderComponent($$result2, "TrustedCompaniesContainer", $$TrustedCompaniesContainer, {})} </div> </section> <section id="services" class="p-10 mb-16 flex flex-col items-center"> <h2 class="text-7xl p-4">Services I Offer</h2> ${renderComponent($$result2, "ServicesContainer", ServicesContainer, { "client:visible": true, "client:component-hydration": "visible", "client:component-path": "@/components/react/ServicesContainer", "client:component-export": "default" })} </section> <section id="pro-audio" class="flex flex-col md:flex-row min-h-screen w-screen mb-32"> <div class="p-2 md:min-w-[60%]" id="audio-copy"> <h2 class="text-7xl opacity-20">Pro Audio</h2> <h3 class="text-5xl w-2/3">
-I have over a decade of experience recording & mixing audio.
-</h3> <div class="py-8 flex items-center text-xl"> <a href="/contact" class="p-5 bg-accent-magenta rounded-md px-16 hover:bg-white hover:text-accent-magenta transition">Connect With Me</a> <a class="opacity-50 p-5 hover:opacity-100 transition" href="/projects/pro-audio">See Who I've Worked With</a> </div> <video class="opacity-20 rounded-xl h-full w-full object-cover md:hidden" src="https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/media/video/Shawn-Guitar.mp4" autoplay muted loop playsinline></video> <div class="w-full"> ${renderComponent($$result2, "ProAudioTabs", ProAudioTabs, { "client:visible": true, "client:component-hydration": "visible", "client:component-path": "/Users/shawnpapineau/Developer/SPAP/spap-technology-marketing/frontend/src/components/react/(pro-audio)/ProAudioTabs", "client:component-export": "default" })} </div> </div> <div id="audio-image" class="min-h-screen hidden md:block"> <video class="opacity-20 rounded-xl h-full w-full object-cover" src="https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/media/video/Shawn-Guitar.mp4" autoplay muted loop playsinline></video> </div> </section> <section id="web-solutions" class="p-2 min-h-screen"> <h2 class="text-7xl opacity-20 text-right">Web Solutions</h2> <div class="flex flex-col md:flex-row md:justify-between gap-8"> <div class="md:max-w-[60%] order-2 md:order-1"> <video class="opacity-50 rounded-xl h-full w-full object-cover" src="https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/projects/videos/equature_thumbnail.mp4" autoplay muted loop playsinline></video> <a href="/projects/web" class="block hover:bg-accent-magenta hover:text-white transition text-white/50 p-10 text-center text-2xl border-2 border-white/50 mt-4 rounded-xl">View my Case Studies</a> </div> <div class="text-right order-1 md:order-2"> <h3 class="text-5xl py-4">
+</h1> <h2>Web Developer | Web Designer | Data Management</h2> <div class="order-3"> ${renderComponent($$result2, "SocialMediaButtonGroup", $$SocialMediaButtonGroup, { "color": "text-primary" })} </div> <p class="text-right pb-8 font-bold text-xl md:text-center order-2 md:text-5xl lowercase">
+Web Solutions Expert for <span class="bg-gradient-to-r from-accent-magenta to-accent-purple bg-clip-text text-transparent">Creative Businesses.
+</span> </p> <a href="/#services" class="p-5 border-2 block text-center transition hover:bg-accent-magenta border-accent-magenta order-5 mt-8 w-1/2 rounded-md">Learn More</a> <!--<div class="order-5 max-w-screen">--> <!--    <TestimonialsContainer testimonials={testimonials} client:load />--> <!--</div>--> </div> </section> <section id="social-proof"> <div class="text-white flex flex-col items-center p-10"> <p class="text-2xl text-center">Trusted by these creative brands:</p> ${renderComponent($$result2, "TrustedCompaniesContainer", $$TrustedCompaniesContainer, {})} </div> </section> <section id="services" class="p-10 mb-16 flex flex-col items-center"> <h2 class="text-7xl p-4">Services I Offer</h2> ${renderComponent($$result2, "ServicesContainer", ServicesContainer, { "client:visible": true, "client:component-hydration": "visible", "client:component-path": "@/components/react/ServicesContainer", "client:component-export": "default" })} </section>                                          <section id="web-solutions" class="p-2 min-h-screen"> <h2 class="text-7xl opacity-20 text-right">Web Solutions</h2> <div class="flex flex-col md:flex-row md:justify-between gap-8"> <div class="md:max-w-[60%] order-2 md:order-1"> <video class="opacity-50 rounded-xl h-full w-full object-cover" src="https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/projects/videos/equature_thumbnail.mp4" autoplay muted loop playsinline></video> <a href="/projects/web" class="block hover:bg-accent-magenta hover:text-white transition text-white/50 p-10 text-center text-2xl border-2 border-white/50 mt-4 rounded-xl">View my Case Studies</a> </div> <div class="text-right order-1 md:order-2"> <h3 class="text-5xl py-4">
 Navigate the Technical Side of Your Business with Ease.
 </h3> <p class="text-2xl text-left mt-16">
 I’ll help you Establish dominance in your online presence with

@@ -1,6 +1,6 @@
 import { renderers } from './renderers.mjs';
 import { s as serverEntrypointModule } from './chunks/_@astrojs-ssr-adapter_CvSoi7hX.mjs';
-import { manifest } from './manifest_CbEtlUui.mjs';
+import { manifest } from './manifest_BDs83AOQ.mjs';
 import { createExports } from '@astrojs/netlify/ssr-function.js';
 
 const _page0 = () => import('./pages/_image.astro.mjs');
@@ -16,12 +16,11 @@ const _page9 = () => import('./pages/api/testimonials/new-testimonial.astro.mjs'
 const _page10 = () => import('./pages/api/testimonials/save-testimonial.astro.mjs');
 const _page11 = () => import('./pages/contact.astro.mjs');
 const _page12 = () => import('./pages/leave-a-review.astro.mjs');
-const _page13 = () => import('./pages/projects/pro-audio.astro.mjs');
-const _page14 = () => import('./pages/projects/web/_project_.astro.mjs');
-const _page15 = () => import('./pages/projects/web.astro.mjs');
-const _page16 = () => import('./pages/referrals/_email_.astro.mjs');
-const _page17 = () => import('./pages/thank-you.astro.mjs');
-const _page18 = () => import('./pages/index.astro.mjs');
+const _page13 = () => import('./pages/projects/web/_project_.astro.mjs');
+const _page14 = () => import('./pages/projects/web.astro.mjs');
+const _page15 = () => import('./pages/referrals/_email_.astro.mjs');
+const _page16 = () => import('./pages/thank-you.astro.mjs');
+const _page17 = () => import('./pages/index.astro.mjs');
 
 const pageMap = new Map([
     ["node_modules/.pnpm/astro@4.16.5_typescript@5.6.3/node_modules/astro/dist/assets/endpoint/generic.js", _page0],
@@ -37,12 +36,11 @@ const pageMap = new Map([
     ["src/pages/api/testimonials/save-testimonial.ts", _page10],
     ["src/pages/contact.astro", _page11],
     ["src/pages/leave-a-review.astro", _page12],
-    ["src/pages/projects/pro-audio/index.astro", _page13],
-    ["src/pages/projects/web/[project].astro", _page14],
-    ["src/pages/projects/web/index.astro", _page15],
-    ["src/pages/referrals/[email].astro", _page16],
-    ["src/pages/thank-you.astro", _page17],
-    ["src/pages/index.astro", _page18]
+    ["src/pages/projects/web/[project].astro", _page13],
+    ["src/pages/projects/web/index.astro", _page14],
+    ["src/pages/referrals/[email].astro", _page15],
+    ["src/pages/thank-you.astro", _page16],
+    ["src/pages/index.astro", _page17]
 ]);
 const serverIslandMap = new Map();
 const _manifest = Object.assign(manifest, {
@@ -52,7 +50,7 @@ const _manifest = Object.assign(manifest, {
     middleware: () => import('./_noop-middleware.mjs')
 });
 const _args = {
-    "middlewareSecret": "78cbbd2e-4155-4f6a-99c4-f606e2c7c5f4"
+    "middlewareSecret": "5d75dfd6-828d-4b25-a76f-15d3fe38a53c"
 };
 const _exports = createExports(_manifest, _args);
 const __astrojsSsrVirtualEntry = _exports.default;

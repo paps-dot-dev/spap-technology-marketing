@@ -11,14 +11,10 @@ export const navigationLinks = [
 	},
 	{
 		name: 'Web Solutions',
-		href: '/#web-solutions',
+		href: '/projects/web',
 		active: true,
 	},
-	{
-		name: 'Pro Audio',
-		href: '/#pro-audio',
-		active: true,
-	},
+
 	{
 		name: 'Pricing',
 		href: '/#pricing',
