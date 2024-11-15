@@ -26,17 +26,17 @@ const ProjectDetailsDropdown: FC<ProjectDetailsDropdownProps> = ({
 			transition={{ duration: 0.4 }}
 			className={
 				isOpen
-					? 'bg-background-primary text-text-primary rounded-xl p-10 w-full lowercase'
+					? 'bg-primary text-white rounded-xl p-10 w-full lowercase'
 					: 'bg-white rounded-xl p-10 w-full lowercase'
 			}>
-			<div className="flex items-end justify-between text-4xl">
+			<div className="flex items-end justify-between text-5xl">
 				<motion.p
 					initial={{ translateX: -100, opacity: 1 }}
 					whileInView={{ translateX: 0, opacity: 1 }}
 					className={
 						isOpen
-							? 'font-semibold bg-gradient-to-r from-accent-primary to-accent-pop  bg-clip-text text-transparent'
-							: 'text-background-primary'
+							? 'font-semibold bg-gradient-to-r from-accent-purple to-accent-magenta  bg-clip-text text-transparent'
+							: 'text-primary'
 					}>
 					{title}
 				</motion.p>
@@ -44,7 +44,7 @@ const ProjectDetailsDropdown: FC<ProjectDetailsDropdownProps> = ({
 					animate={{ rotate: isOpen ? 180 : 0 }} // Rotate 180 degrees when isOpen is true
 					transition={{ duration: 0.3 }} // Optional: Add a smooth transition
 				>
-					<MdArrowDownward />
+					<MdArrowDownward className={isOpen ? 'text-white' : 'text-primary'} />
 				</motion.div>
 			</div>
 			{isOpen && (
@@ -56,7 +56,7 @@ const ProjectDetailsDropdown: FC<ProjectDetailsDropdownProps> = ({
 							opacity: isOpen ? [0, 0.5, , 1] : [0],
 						}}></motion.div>
 					<motion.p
-						className="py-4 normal-case text-left"
+						className="py-4 normal-case text-left text-xl"
 						animate={{
 							translateY: isOpen ? [-50, 0] : 0,
 							opacity: isOpen ? [0, 1] : [0],
@@ -79,7 +79,7 @@ const ProjectDetailsDropdown: FC<ProjectDetailsDropdownProps> = ({
 							<div
 								key={idx}
 								title={item.name}
-								className="flex relative flex-col items-center justify-center bg-accent-pop/80 rounded-xl p-5 lg:p-10 group hover:bg-black/50">
+								className="flex relative flex-col items-center justify-center bg-primary/80 rounded-xl p-5 lg:p-10 group hover:bg-black/50">
 								<img
 									className="object-cover w-16 lg:w-32 group-hover:opacity-20"
 									src={item.thumbnail_url}

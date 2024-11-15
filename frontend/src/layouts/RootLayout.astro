@@ -10,6 +10,9 @@ const { title, description, imageRef, urlSlug } = Astro.props;
 	<head>
 		<meta charset="utf-8" />
 		<link rel="sitemap" href="/sitemap-index.xml" />
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bokor&display=swap');
+		</style>
 
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
@@ -32,7 +35,7 @@ const { title, description, imageRef, urlSlug } = Astro.props;
 	</head>
 
 	<body
-		class="mx-auto bg-gradient-to-b from-black to-gray-900 min-h-screen flex flex-col items-center"
+		class="mx-auto bg-black min-h-screen flex flex-col items-center text-white"
 	>
 		<header>
 			<NavigationContainer />

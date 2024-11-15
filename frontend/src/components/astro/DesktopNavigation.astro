@@ -1,0 +1,15 @@
+---
+const {links} = Astro.props
+
+---
+<ul class="flex justify-between gap-12 text-xl items-center">
+    {links.map((link, index) => {
+        if(link.active) {
+            return <li class={" text-white/25 group hover:text-accent-magenta cursor-pointer"} key={index}><a href={link.href} class="bokor-regular">
+                {link.name}
+            </a></li>
+        }
+    })}
+</ul>
+
+

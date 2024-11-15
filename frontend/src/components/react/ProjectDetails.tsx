@@ -4,7 +4,7 @@ import ProjectDetailsDropdown from './ProjectDetailsDropdown';
 
 const ProjectDetails = ({ data }) => {
 	return (
-		<div className="text-background-primary lowercase space-y-4">
+		<div className="text-white lowercase space-y-4">
 			<ProjectDetailsDropdown
 				title={'The Problem'}
 				data={data.problem_description}

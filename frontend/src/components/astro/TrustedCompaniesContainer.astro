@@ -8,11 +8,11 @@ if (error) {
 }
 ---
 
-<div class="flex flex-wrap justify-evenly items-center gap-8">
+<div class="flex flex-wrap justify-between w-full items-center gap-8 p-5">
 	{
 		data.map((item) => (
 			<div class=" flex-col items-center flex justify-center  ">
-				<img class="max-w-16 lg:max-w-32" src={item.thumbnail_url} />
+				<img class="max-w-16 md:max-w-24 grayscale" src={item.thumbnail_url} />
 			</div>
 		))
 	}

@@ -3,11 +3,13 @@ import { Icon } from 'astro-icon/components';
 import MobileNavLink from './MobileNavLink.astro';
 import { Button } from '@/components/ui/button';
 import SocialMediaButtonGroup from './ui/SocialMediaButtonGroup.astro';
+
+const {links} = Astro.props
 ---
 
 <div class="flex justify-center items-center">
-	<button class="rounded-full bg-text-primary p-4" id="hamburger-menu"
-		><Icon class="text-xl text-accent-primary" name={'mdi:apps'} /></button
+	<button class="rounded-full border-2 border-white p-4 group transition hover:border-accent-magenta" id="hamburger-menu"
+		><Icon class="text-xl text-white group-hover:text-accent-magenta" name={'mdi:apps'} /></button
 	>
 </div>
 
@@ -28,24 +30,31 @@ import SocialMediaButtonGroup from './ui/SocialMediaButtonGroup.astro';
 	</div>
 
 	<ul class="flex flex-col items-center gap-16 text-left px-4 mt-8">
-		<li class="w-full">
-			<MobileNavLink href="/" name="Home" />
-		</li>
-		<li class="w-full">
-			<MobileNavLink href="/#featured-projects" name="Featured Projects" />
-		</li>
-		<li class="w-full">
-			<MobileNavLink href="/contact" name="Contact" />
-		</li>
-		<li class="w-full">
-			<MobileNavLink
-				href="https://newsletter.spaptechnology.com/subscribe"
-				name="Newsletter"
-			/>
-		</li>
-		<li class="lg:w-1/5 ml-auto">
-			<SocialMediaButtonGroup color="accent-primary" />
-		</li>
+		{links.map((link, index) => {
+			if(link.active) {
+				return <li class="w-full">
+					<MobileNavLink href={link.href} name={link.name} />
+				</li>
+			}
+		})}
+		<!--<li class="w-full">-->
+		<!--	<MobileNavLink href="/" name="Home" />-->
+		<!--</li>-->
+		<!--<li class="w-full">-->
+		<!--	<MobileNavLink href="/#featured-projects" name="Featured Projects" />-->
+		<!--</li>-->
+		<!--<li class="w-full">-->
+		<!--	<MobileNavLink href="/contact" name="Contact" />-->
+		<!--</li>-->
+		<!--<li class="w-full">-->
+		<!--	<MobileNavLink-->
+		<!--		href="https://newsletter.spaptechnology.com/subscribe"-->
+		<!--		name="Newsletter"-->
+		<!--	/>-->
+		<!--</li>-->
+		<!--<li class="lg:w-1/5 ml-auto">-->
+		<!--	<SocialMediaButtonGroup color="accent-primary" />-->
+		<!--</li>-->
 	</ul>
 </dialog>
 
