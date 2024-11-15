@@ -1,0 +1,22 @@
+---
+import RootLayout from '../layouts/RootLayout.astro';
+import ContactForm from '../components/react/ContactForm';
+import '../styles/globals.css';
+---
+
+<RootLayout
+	title="Let's Chat | SPAP Technology"
+	description="Get in touch with SPAP Technology Solutions! Whether you’re a creative, entrepreneur, or musician, let's discuss how we can bring your vision to life with custom web solutions, apps, and digital media."
+	imageRef="https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/branding/logos/SPAP%20Logos/Vertical/PNG/White_Vertical%20Lockup_SPAP.png"
+	urlSlug="contact"
+>
+	<section class="min-h-screen flex flex-col justify-center items-center">
+		<h1
+			class="text-4xl bokor-regular lg:text-7xl lg:p-2 text-center font-bold bg-gradient-to-r from-accent-purple to-accent-magenta bg-clip-text text-transparent"
+		>
+			Ready to Amplify Your Web Presence?
+		</h1>
+
+		<ContactForm client:load />
+	</section>
+</RootLayout>
