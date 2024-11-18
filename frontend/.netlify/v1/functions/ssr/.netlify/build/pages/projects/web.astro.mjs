@@ -1,8 +1,8 @@
-import { a as createComponent, r as renderTemplate, d as renderComponent, m as maybeRenderHead } from '../../chunks/astro/server_BKCQEo5J.mjs';
+import { a as createComponent, r as renderTemplate, d as renderComponent, m as maybeRenderHead } from '../../chunks/astro/server_DfnRGx3A.mjs';
 import 'kleur/colors';
-import { $ as $$FeaturedProjectsGrid } from '../../chunks/FeaturedProjectsGrid_DhfVGzqJ.mjs';
-import { $ as $$SocialMediaButton } from '../../chunks/SocialMediaButton_BaM_ESXe.mjs';
-import { $ as $$RootLayout } from '../../chunks/RootLayout_DFsQA0li.mjs';
+import { $ as $$FeaturedProjectsGrid } from '../../chunks/FeaturedProjectsGrid_BwFDdXha.mjs';
+import { $ as $$SocialMediaButton } from '../../chunks/SocialMediaButton_nAYfsnOQ.mjs';
+import { $ as $$RootLayout } from '../../chunks/RootLayout_DA6riOg4.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const $$Index = createComponent(($$result, $$props, $$slots) => {

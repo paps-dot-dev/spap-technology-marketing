@@ -8,14 +8,14 @@ import BlogContainer from '@/components/react/BlogContainer';
 ---
 
 <RootLayout
-	title="Amplified Web Presence for Creative Entrpreneurs"
+	title="Amplified Web Presence for Creative Entrepreneurs"
 	description="SPAP Technology Solutions specializes in crafting solutions for creative entrepreneurs including website development, app development,business tools, integrations, copywriting, and more."
 	imageRef="https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/branding/logos/SPAP%20Logos/Vertical/PNG/White_Vertical%20Lockup_SPAP.png"
 	urlSlug="/"
 >
 	<section
 		id="hero"
-		class="relative h-screen overflow-hidden rounded-xl"
+		class="relative h-screen w-screen rounded-xl"
 	>
 		<video
 			class="absolute top-1/2 left-1/2 w-full h-full object-cover transform -translate-x-1/2 -translate-y-1/2 z-10"
@@ -28,10 +28,10 @@ import BlogContainer from '@/components/react/BlogContainer';
 		<!-- Content on top of the video -->
 		<div
 			id="content-container"
-			class="relative z-20 bg-black/25 flex flex-col items-center justify-center py-10 text-white px-4 h-full"
+			class="relative z-20 bg-black/25 flex flex-col items-center justify-center py-10 text-white h-full"
 		>
 			<h1
-				class="text-7xl font-semibold md:text-[8rem] md:text-center order-1 md:w-2/3 lowercase"
+				class="text-7xl font-semibold md:text-[8rem] text-center order-1 lowercase"
 			>
 				Shawn Paps
 			</h1>
@@ -40,7 +40,7 @@ import BlogContainer from '@/components/react/BlogContainer';
 				<SocialMediaButtonGroup color="text-primary" />
 			</div>
 			<p
-				class="text-right pb-8 font-bold text-xl md:text-center order-2 md:text-5xl lowercase"
+				class=" pb-8 font-bold text-xl text-center order-2 md:text-5xl lowercase"
 			>
 				Web Solutions Expert for <span
 					class="bg-gradient-to-r from-accent-magenta to-accent-purple bg-clip-text text-transparent"
@@ -64,8 +64,8 @@ import BlogContainer from '@/components/react/BlogContainer';
 			<TrustedCompaniesContainer />
 		</div>
 	</section>
-	<section id="services" class="p-10 mb-16 flex flex-col items-center">
-		<h2 class="text-7xl p-4">Services I Offer</h2>
+	<section id="services" class="md:p-10 mb-16 flex flex-col items-center">
+		<h2 class="text-7xl">Services I Offer</h2>
 		<ServicesContainer client:visible />
 	</section>
 	<!--<section-->
@@ -110,7 +110,7 @@ import BlogContainer from '@/components/react/BlogContainer';
 	<!--	</div>-->
 	<!--</section>-->
 	<section id="web-solutions" class="p-2 min-h-screen">
-		<h2 class="text-7xl opacity-20 text-right">Web Solutions</h2>
+		<h2 class="text-7xl opacity-20 text-left md:text-right">Web Solutions</h2>
 		<div class="flex flex-col md:flex-row md:justify-between gap-8">
 			<div class="md:max-w-[60%] order-2 md:order-1">
 				<video
@@ -126,8 +126,8 @@ import BlogContainer from '@/components/react/BlogContainer';
 					>View my Case Studies</a
 				>
 			</div>
-			<div class="text-right order-1 md:order-2">
-				<h3 class="text-5xl py-4">
+			<div class="text-left order-1 md:order-2">
+				<h3 class="text-5xl py-4 md:text-right">
 					Navigate the Technical Side of Your Business with Ease.
 				</h3>
 				<p class="text-2xl text-left mt-16">
@@ -170,7 +170,7 @@ import BlogContainer from '@/components/react/BlogContainer';
 				height="52"
 				frameborder="0"
 				scrolling="no"
-				style="margin: 0; border-radius: 0px !important; background-color: transparent; width: 500px"
+				style="margin: 0; border-radius: 0px !important; background-color: transparent; width: full"
 			></iframe>
 		</div>
 
