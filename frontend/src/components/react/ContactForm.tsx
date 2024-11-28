@@ -119,11 +119,11 @@ const ContactForm: React.FC = () => {
 	};
 
 	return (
-		<div className="mt-8 w-full lg:my-16 lg:mb-32  ">
+		<div className="mt-8 w-full lg:my-16 lg:mb-32 lg:p-8 ">
 			<form
 				onSubmit={handleSubmit}
-				className="flex flex-col gap-4 text-white p-5 rounded-md w-full bg-background-primary/50 lg:p-20">
-				<label className="text-2xl">
+				className="flex flex-col gap-4 text-white p-5 rounded-md w-full bg-background-primary/50 lg:p-20 bg-primary">
+				<label className="lg:lg:text-2xl">
 					First Name
 					<input
 						id="firstName"
@@ -132,7 +132,7 @@ const ContactForm: React.FC = () => {
 						required
 						type="text"
 						placeholder="First Name"
-						className="p-4 mt-1 block text-2xl outline-none bg-transparent border-2 w-full rounded"
+						className="p-4 mt-1 block lg:text-2xl outline-none bg-transparent border-2 w-full rounded"
 					/>
 				</label>
 
@@ -145,18 +145,18 @@ const ContactForm: React.FC = () => {
 						required
 						type="email"
 						placeholder="Email Address"
-						className="p-4 mt-1 block text-2xl outline-none bg-transparent border-2 w-full rounded"
+						className="p-4 mt-1 block lg:text-2xl outline-none bg-transparent border-2 w-full rounded"
 					/>
 				</label>
 
-				<label className="text-2xl">
+				<label className="lg:text-2xl">
 					Tell Me a Little About the Project.
 					<input
 						id="projectScope"
 						value={formData.projectScope}
 						onChange={handleInputChange}
 						placeholder="I want to redesign my website."
-						className="p-4 mt-1 block text-2xl outline-none bg-transparent border-2 w-full rounded"
+						className="p-4 mt-1 block lg:text-2xl outline-none bg-transparent border-2 w-full rounded"
 					/>
 				</label>
 				<label className="text-md">
@@ -165,11 +165,37 @@ const ContactForm: React.FC = () => {
 						onChange={handleInputChange}
 						id="campaignCategory"
 						value={formData.campaignCategory}
-						className="p-4 mt-1 block text-2xl outline-none bg-transparent border-2 w-full rounded">
+						className="p-4 mt-1 block lg:text-2xl outline-none bg-transparent border-2 w-full rounded">
 						<option value={'development'}>Modern Web Tools</option>
 						<option value={'marketing'}>Email Marketing</option>
 						<option value={'business'}>Business Tools</option>
 						<option value={'design'}>Web Design Tips</option>
+					</select>
+				</label>
+
+				<label className="text-md border-2  p-4 rounded-md  font-bold lg:text-2xl">
+					<img
+						className="rounded-xl lg:w-1/4 w-1/2 mb-2 object-cover"
+						src="https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/branding/logos/RiffsCodeCoffee.png"
+					/>
+					<span className="text-xl">
+						Subscribe to 'Riffs. Code. Coffee.' & Get my Guide to the Modern Web
+						for Free!
+					</span>
+					<span className="block font-medium text-xs lg:lg:text-2xl mb-4 py-4 lg:w-3/4">
+						A free newsletter where I talk about music, tech, coffee, and
+						everything in between. <br />
+						Subscribe to get my free{' '}
+						<span className="font-bold">{`Unf[...]k Your Tech Stack Guide`}</span>{' '}
+						where I share some of my favorite modern web tools and tips.
+					</span>
+					<select
+						onChange={handleInputChange}
+						value={formData.signUpForNewsletter}
+						id="signUpForNewsletter"
+						className="p-4 mt-1 block lg:text-2xl outline-none bg-transparent border-2 w-full  rounded">
+						<option>Yes</option>
+						<option>No</option>
 					</select>
 				</label>
 				<label className="text-xs mt-4">
@@ -191,35 +217,9 @@ const ContactForm: React.FC = () => {
 					)}
 				</label>
 
-				<label className="text-md border-2  p-4 rounded-md  font-bold text-2xl">
-					<img
-						className="rounded-xl lg:w-1/4 w-1/2 mb-2 object-cover"
-						src="https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/branding/logos/RiffsCodeCoffee.png"
-					/>
-					<span className="text-xl">
-						Subscribe to 'Riffs. Code. Coffee.' & Get my Guide to the Modern Web
-						for Free!
-					</span>
-					<span className="block font-medium text-xs lg:text-2xl mb-4 py-4 lg:w-3/4">
-						A free newsletter where I talk about music, tech, coffee, and
-						everything in between. <br />
-						Subscribe to get my free{' '}
-						<span className="font-bold">{`Unf[...]k Your Tech Stack Guide`}</span>{' '}
-						where I share some of my favorite modern web tools and tips.
-					</span>
-					<select
-						onChange={handleInputChange}
-						value={formData.signUpForNewsletter}
-						id="signUpForNewsletter"
-						className="p-4 mt-1 block text-2xl outline-none bg-transparent border-2 w-full lg:text-lg rounded">
-						<option>Yes</option>
-						<option>No</option>
-					</select>
-				</label>
-
 				<Button
 					variant="outline"
-					className="my-8 p-10 bg-accent-primary text-text-primary"
+					className="my-8 p-10 text-xl bg-accent-secondary text-text-primary"
 					type="submit">
 					Get In Touch.
 				</Button>

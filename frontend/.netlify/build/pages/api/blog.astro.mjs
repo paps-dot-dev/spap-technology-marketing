@@ -9,17 +9,20 @@ const GET = async (req, res) => {
       status: "confirmed",
       // Replace with the field you want to sort by
       // Optional: Use "asc" for ascending or "desc" for descending
-      limit: "4"
+      limit: "10"
       // Optional: Limit the number of results
     });
-    const response = await fetch(`https://api.beehiiv.com/v2/publications/${publicationId}/posts?${params.toString()}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${"xi6Atroow2LOaLJ5Xok9QhM5wWUyRvISKdiSabrpGWeWt65HWV7hKSFNYzeAuwHU"}`
-        // Ensure the token is correctly set in environment variables
+    const response = await fetch(
+      `https://api.beehiiv.com/v2/publications/${publicationId}/posts?${params.toString()}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${"xi6Atroow2LOaLJ5Xok9QhM5wWUyRvISKdiSabrpGWeWt65HWV7hKSFNYzeAuwHU"}`
+          // Ensure the token is correctly set in environment variables
+        }
       }
-    });
+    );
     if (!response.ok) {
       throw new Error(`Error fetching posts: ${response.statusText}`);
     }
@@ -48,8 +51,8 @@ const GET = async (req, res) => {
 };
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-    __proto__: null,
-    GET
+	__proto__: null,
+	GET
 }, Symbol.toStringTag, { value: 'Module' }));
 
 const page = () => _page;

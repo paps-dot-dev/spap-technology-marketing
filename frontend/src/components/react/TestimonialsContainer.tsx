@@ -18,18 +18,15 @@ const TestimonialsContainer = ({ testimonials }) => {
 			{testimonials.map((item, index) => (
 				<div
 					key={index}
-					className="bg-text-primary/70 text-background-primary flex flex-col items-center justify-center rounded w-[500px] min-h-[300px] p-6 text-left flex-wrap space-y-4 snap-center">
+					className="bg-white text-primary flex flex-col items-center justify-center rounded w-[500px] min-h-[300px] p-6 text-left flex-wrap space-y-4 snap-center">
 					<p>
 						{isOpen ? item.testimonial : truncateTestimonial(item.testimonial)}
 					</p>
 					<div className="flex justify-between items-center w-full space-y-2">
-						<Button
-							onClick={() => setIsOpen(!isOpen)}
-							size="sm"
-							variant="ghost">
+						<Button onClick={() => setIsOpen(!isOpen)} variant="ghost">
 							{isOpen ? 'Read Less' : 'Read More'}
 						</Button>
-						<div>
+						<div className="text-accent-secondary">
 							<p className="text-right font-bold">{item.name}</p>
 							<p className="text-sm text-right font-extralight">
 								{item.company}

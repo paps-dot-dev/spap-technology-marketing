@@ -2,7 +2,7 @@ import { Client } from '@notionhq/client';
 export { renderers } from '../../renderers.mjs';
 
 const notion = new Client({
-  auth: undefined                            
+  auth: "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"
 });
 
 const POST = async ({ request }) => {

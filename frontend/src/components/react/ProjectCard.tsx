@@ -23,7 +23,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
 	const [hovered, setHovered] = useState(false);
 
 	return (
-		<div className="lowercase flex flex-col items-center lg:p-20">
+		<div className="lowercase flex flex-col items-center lg:p-20  rounded-xl">
 			<motion.div
 				onHoverStart={() => setHovered(true)}
 				onHoverEnd={() => setHovered(false)}
@@ -32,7 +32,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
 				whileInView={{ opacity: 1, scale: 1 }}
 				exit={{ opacity: 0, z: 10, scale: 0.5 }}
 				transition={{ delay: 0.1, stiffness: 0.2 }}
-				className="card base-400 w-96 max-h-[500px] lg:w-full shadow-xl z-10 relative rounded-xl">
+				className="card  max-h-[500px] lg:w-full shadow-xl z-10 relative rounded-xl">
 				<video
 					autoPlay
 					loop
@@ -40,7 +40,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
 					playsInline
 					className="p-10 z-10 object-cover w-full h-full"
 					src={
-						project.thumbnail_url
+						project.thumbnail_url !== null
 							? project.thumbnail_url
 							: 'https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/branding/logos/SPAP%20Logos/Icon/PNG/Black_Icon%20Lockup_SPAP.png'
 					}></video>
@@ -53,7 +53,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
 						className="absolute top-0 h-full w-full bg-black/90 z-20 flex justify-center items-center flex-col rounded-xl gap-4">
 						<button
 							onClick={() => setHovered(false)}
-							className="text-3xl text-accent-primary absolute p-4 top-5 right-5 hover:scale-125 ease-linear duration-100 hover:text-accent-pop z-40">
+							className="text-3xl text-accent-primary absolute p-4 top-5 right-5 hover:scale-125 ease-linear duration-100 hover:text-accent-secondary z-40">
 							<MdClose onClick={() => setHovered(false)} />
 						</button>
 						<motion.p
@@ -68,7 +68,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
 							initial={{ scale: 0.5, opacity: 0 }}
 							whileInView={{ opacity: 1, scale: 1 }}
 							whileTap={{ scale: 1.2 }}
-							className=" text-5xl px-16 border-white border-2 rounded-full text-accent-purple hover:text-accent-magenta group hover:border-accent-magenta">
+							className=" text-5xl px-16 border-white border-2 rounded-full text-accent-primary hover:text-accent-secondary group hover:border-accent-secondary">
 							<MdArrowForward className="group-hover:translate-x-16 duration-200 ease-linear" />
 						</motion.a>
 					</motion.div>
@@ -84,7 +84,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
 				<div className="flex items-center py-1 gap-2">
 					{project.tags?.map((tag: string) => (
 						<p
-							className={`bg-accent-primary text-text-primary rounded-full p-1 w-20 text-center text-xs`}>
+							className={`bg-accent-primary/75 odd:bg-accent-secondary/75 text-text-primary rounded-full p-1 w-20 text-center text-xs`}>
 							{tag}
 						</p>
 					))}

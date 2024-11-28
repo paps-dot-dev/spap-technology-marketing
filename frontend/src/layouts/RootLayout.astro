@@ -11,7 +11,7 @@ const { title, description, imageRef, urlSlug } = Astro.props;
 		<meta charset="utf-8" />
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<style>
-			@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bokor&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 		</style>
 
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -34,16 +34,14 @@ const { title, description, imageRef, urlSlug } = Astro.props;
 		<title>{title}</title>
 	</head>
 
-	<body
-		class="bg-black min-h-screen w-screen text-white"
-	>
-		<header class="">
+	<body class="min-h-screen mx-auto border-2 bg-background">
+		<header class="bg-primary">
 			<NavigationContainer />
 		</header>
-		<main class="p-4">
+		<main class="min-h-screen">
 			<slot />
 		</main>
-		<footer class="p-4 text-white w-full mt-auto border-t-[.5px]">
+		<footer class="bg-primary mt-auto">
 			<Icon class="text-4xl" name={'logos/white-primary'} />
 			<p class="text-xs text-center mt-8">
 				© 2024 SPAP Technology Solutions. All Rights Reserved.
