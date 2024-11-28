@@ -1,13 +1,13 @@
-import { a as createComponent, r as renderTemplate, d as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_BwxQodTz.mjs';
+import { a as createComponent, r as renderTemplate, d as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_PaPPHYVh.mjs';
 import 'kleur/colors';
-import { B as Button, $ as $$RootLayout } from '../chunks/RootLayout_DYH7LGDT.mjs';
+import { B as Button, $ as $$RootLayout } from '../chunks/RootLayout_kaoKhfdV.mjs';
 import { jsx, jsxs } from 'react/jsx-runtime';
 import { useState } from 'react';
 /* empty css                                   */
 export { renderers } from '../renderers.mjs';
 
 const ContactForm = () => {
-  const [isChecked, setIsChecked] = useState(true);
+  useState(true);
   const [nonConsentMessage, setNonConsentMessage] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",

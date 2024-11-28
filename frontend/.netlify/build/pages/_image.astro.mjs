@@ -1,6 +1,6 @@
 import { isRemotePath } from '@astrojs/internal-helpers/path';
-import { A as AstroError, f as NoImageMetadata, F as FailedToFetchRemoteImageDimensions, E as ExpectedImageOptions, g as ExpectedImage, h as ExpectedNotESMImage, i as InvalidImageService, r as resolveSrc, j as isRemoteImage, k as isESMImportedImage, l as isLocalService, D as DEFAULT_HASH_PROPS, m as ImageMissingAlt, n as isRemoteAllowed } from '../chunks/astro/assets-service_Bb5h7-wx.mjs';
-import { c as createAstro, a as createComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute, s as spreadAttributes } from '../chunks/astro/server_BwxQodTz.mjs';
+import { A as AstroError, f as NoImageMetadata, F as FailedToFetchRemoteImageDimensions, E as ExpectedImageOptions, g as ExpectedImage, h as ExpectedNotESMImage, r as resolveSrc, i as isRemoteImage, j as isESMImportedImage, k as isLocalService, D as DEFAULT_HASH_PROPS, l as InvalidImageService, m as ImageMissingAlt, n as isRemoteAllowed } from '../chunks/astro/assets-service_CQpzAwDw.mjs';
+import { c as createAstro, a as createComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute, s as spreadAttributes } from '../chunks/astro/server_PaPPHYVh.mjs';
 import 'clsx';
 import * as mime from 'mrmime';
 export { renderers } from '../renderers.mjs';
@@ -843,7 +843,7 @@ async function getConfiguredImageService() {
   if (!globalThis?.astroAsset?.imageService) {
     const { default: service } = await import(
       // @ts-expect-error
-      '../chunks/astro/assets-service_Bb5h7-wx.mjs'
+      '../chunks/astro/assets-service_CQpzAwDw.mjs'
     ).then(n => n.s).catch((e) => {
       const error = new AstroError(InvalidImageService);
       error.cause = e;
@@ -949,7 +949,7 @@ const $$Image = createComponent(async ($$result, $$props, $$slots) => {
     additionalAttributes.srcset = image.srcSet.attribute;
   }
   return renderTemplate`${maybeRenderHead()}<img${addAttribute(image.src, "src")}${spreadAttributes(additionalAttributes)}${spreadAttributes(image.attributes)}>`;
-}, "/Users/shawnpapineau/Developer/SPAP/spap-technology-marketing/frontend/node_modules/.pnpm/astro@4.16.16_@types+node@22.9.0_rollup@4.27.0_typescript@5.6.3/node_modules/astro/components/Image.astro", void 0);
+}, "/Users/shawnpapineau/Developer/SPAP/spap-technology-marketing/frontend/node_modules/.pnpm/astro@4.16.16_typescript@5.7.2/node_modules/astro/components/Image.astro", void 0);
 
 const $$Astro = createAstro("https://spaptechnology.com");
 const $$Picture = createComponent(async ($$result, $$props, $$slots) => {
@@ -1009,7 +1009,7 @@ const $$Picture = createComponent(async ($$result, $$props, $$slots) => {
     const srcsetAttribute = props.densities || !props.densities && !props.widths ? `${image.src}${image.srcSet.values.length > 0 ? ", " + image.srcSet.attribute : ""}` : image.srcSet.attribute;
     return renderTemplate`<source${addAttribute(srcsetAttribute, "srcset")}${addAttribute(mime.lookup(image.options.format ?? image.src) ?? `image/${image.options.format}`, "type")}${spreadAttributes(sourceAdditionalAttributes)}>`;
   })} <img${addAttribute(fallbackImage.src, "src")}${spreadAttributes(imgAdditionalAttributes)}${spreadAttributes(fallbackImage.attributes)}> </picture>`;
-}, "/Users/shawnpapineau/Developer/SPAP/spap-technology-marketing/frontend/node_modules/.pnpm/astro@4.16.16_@types+node@22.9.0_rollup@4.27.0_typescript@5.6.3/node_modules/astro/components/Picture.astro", void 0);
+}, "/Users/shawnpapineau/Developer/SPAP/spap-technology-marketing/frontend/node_modules/.pnpm/astro@4.16.16_typescript@5.7.2/node_modules/astro/components/Picture.astro", void 0);
 
 const imageConfig = {"service":{"entrypoint":"astro/assets/services/sharp","config":{}},"domains":[],"remotePatterns":[]};
 					const getImage = async (options) => await getImage$1(options, imageConfig);

@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import NavigationContainer from '../components/astro/NavigationContainer.astro';
 import '../styles/globals.css';
+import SocialMediaButtonGroup from '@/components/astro/ui/SocialMediaButtonGroup.astro';
 
 const { title, description, imageRef, urlSlug } = Astro.props;
 ---
@@ -41,7 +42,7 @@ const { title, description, imageRef, urlSlug } = Astro.props;
 		<main class="min-h-screen">
 			<slot />
 		</main>
-		<footer class="bg-primary mt-auto">
+		<footer class="bg-primary mt-auto flex justify-between items-end">
 			<Icon class="text-4xl" name={'logos/white-primary'} />
 			<p class="text-xs text-center mt-8">
 				© 2024 SPAP Technology Solutions. All Rights Reserved.

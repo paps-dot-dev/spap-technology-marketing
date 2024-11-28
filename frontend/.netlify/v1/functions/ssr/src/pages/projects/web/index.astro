@@ -1,0 +1,32 @@
+---
+import FeaturedProjectsGrid from '../../../components/astro/FeaturedProjectsGrid.astro';
+import SocialMediaButton from '../../../components/astro/ui/SocialMediaButton.astro';
+import RootLayout from '../../../layouts/RootLayout.astro';
+---
+
+<RootLayout
+	title={'Featured Projects | Custom Websites, Web Apps, & Integrations by SPAP Technology Solutions'}
+	description="Discover our portfolio of featured projects showcasing SPAP Technology Solutions’ expertise in building custom websites, web apps, and seamless integrations. See how we help businesses achieve innovation, precision, and creativity."
+	urlSlug="/projects/web"
+>
+	<section
+		id="featured-projects"
+		class="min-h-screen bg-background text-text-primary py-8"
+	>
+		<div
+			class="flex justify-between items-center border-b-2 py-4 border-background-primary px-2 mx-2"
+		>
+			<h2 class="text-3xl lg:text-4xl font-bold">featured projects</h2>
+			<div class="w-24">
+				<SocialMediaButton
+					buttonData={{
+						iconRef: 'mdi:github',
+						href: 'https://github.com/paps-dot-dev',
+						color: 'background-primary',
+					}}
+				/>
+			</div>
+		</div>
+		<FeaturedProjectsGrid />
+	</section>
+</RootLayout>

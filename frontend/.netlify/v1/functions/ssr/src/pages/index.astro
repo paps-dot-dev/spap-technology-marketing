@@ -1,0 +1,151 @@
+---
+import RootLayout from '../layouts/RootLayout.astro';
+import SocialMediaButtonGroup from '../components/astro/ui/SocialMediaButtonGroup.astro';
+import TrustedCompaniesContainer from '../components/astro/TrustedCompaniesContainer.astro';
+import ServicesContainer from '@/components/react/ServicesContainer';
+import FeaturedTechCards from '@/components/react/FeaturedTechCards';
+import BlogContainer from '@/components/react/BlogContainer';
+import { Icon } from 'astro-icon/components';
+import About_PillarList from '@/components/react/About_PillarList';
+import About_PillarCards from '@/components/react/About_PillarCards';
+import { pillars } from '@/lib/pillars';
+import FeaturedProjectsGrid from '@/components/astro/FeaturedProjectsGrid.astro';
+import TestimonialsContainer from '@/components/react/TestimonialsContainer';
+import { supabase } from '@/db/supabase';
+import PricingContainer from '@/components/react/PricingContainer';
+import CTA from '@/components/astro/CTA.astro';
+
+const getTestimonials = async () => {
+	const { data, error } = await supabase.from('testimonials').select('*');
+
+	if (data) {
+		return data;
+	}
+};
+
+const testimonials = await getTestimonials();
+console.log(testimonials);
+---
+
+<RootLayout
+	title="SPAP Technology Solutions | Custom Web Apps & Integrations for Modern Businesses"
+	description="SPAP Technology Solutions is a next-level agency delivering entrepreneurs and tech-forward businesses scale with custom websites, apps, and seamless integrations. Simplify your tech stack today."
+	imageRef="https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/branding/logos/SPAP%20Logos/Vertical/PNG/White_Vertical%20Lockup_SPAP.png"
+	urlSlug="/"
+>
+	<section
+		id="hero"
+		class="lg:h-[85vh] h-[90vh] py-96 flex flex-col items-center justify-center bg-gradient-to-r from-[#2C3E50] via-accent-secondary to-[#34495E] bg-[length:300%_200%] animate-gradient text-text-primary"
+	>
+		<div class="max-w-96 md:max-w-[600px]">
+			<img
+				src="https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/branding/logos/SPAP%20Logos/Primary/PNG/Black_Primary%20Lockup_SPAP.png"
+			/>
+		</div>
+		<h1 class="lg:text-3xl text-2xl text-center mt-2 font-bold">
+			Innovative Web Solutions. Crafted by <span
+				class="animate-gradient bg-gradient-to-r from-accent-secondary drop-shadow-md to-text-primary bg-[length:50%_100%] text-transparent bg-clip-text font-bold"
+				>Experts</span
+			>. Built to <span
+				class="font-bold hover:text-3xl lg:hover:text-4xl ease-linear hover:text-accent-primary duration-200 cursor-pointer trasnition-all"
+				>Scale</span
+			>.
+		</h1>
+
+		<div
+			class="bg-background p-5 text-text-primary rounded-xl shadow-md mt-auto lg:mt-32 mx-4 lg:mx-0"
+		>
+			<p class="text-2xl text-center font-semibold">
+				We're Not Your Typical Website Agency.
+			</p>
+			<div class="flex justify-between pt-4">
+				<p class="text-accent-primary">
+					<span class="lg:hidden">Swipe Up</span>
+					<span class="hidden lg:inline">Scroll</span> to find out why.
+				</p>
+				<Icon
+					class="text-4xl animate-bounce duration-900 lg:hidden"
+					name="mdi:arrow-up"
+				/>
+				<Icon
+					class="text-4xl animate-bounce duration-900 hidden lg:block"
+					name="mdi:arrow-down"
+				/>
+			</div>
+		</div>
+	</section>
+	<section
+		id="about"
+		class="bg-background p-4 lg:py-16 text-text-primary md:flex md:flex-col justify-between"
+	>
+		<h2 class="text-4xl lg:text-5xl font-light">
+			The SPAP Technology Difference
+		</h2>
+		<div class="py-2">
+			<p class="text-lg lg:text-2xl">
+				At SPAP Technology Solutions, we go beyond delivering websites and
+				apps—we empower businesses to thrive in a digital-first world. Our
+				approach is built on three pillars:
+			</p>
+			<div class="lg:p-10 lg:hidden">
+				<About_PillarList client:visible />
+			</div>
+		</div>
+		<div class="flex flex-col lg:flex-row items-center justify-between">
+			<div class="md:max-w-[50%] lg:order-2">
+				<video
+					class="object-cover w-full rounded-xl shadow-lg"
+					autoplay
+					loop
+					src="https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/projects/videos/MacBook%20Pro%20M3%2014-inch%20turn.mp4?t=2024-11-27T22%3A33%3A17.172Z"
+				>
+				</video>
+			</div>
+			<div class="lg:w-[900px] w-full">
+				<About_PillarCards client:visible pillars={pillars} />
+			</div>
+		</div>
+	</section>
+	<section class="bg-primary" id="Services">
+		<h2 class="text-xl text-text-primary lg:text-5xl p-4">Core Services</h2>
+
+		<ServicesContainer client:visible />
+	</section>
+	<section id="featured-projects" class="p-4 text-text-primary bg-primary">
+		<h2 class="text-4xl lg:text-5xl">Recent Projects</h2><FeaturedProjectsGrid
+		/>
+	</section>
+	<section id="testimonials" class="p-4 text-text-primary py-16 pb-32">
+		<h2 class="text-4xl lg:text-5xl">What Our Clients Say</h2>
+		<TestimonialsContainer client:visible testimonials={testimonials} />
+		<div class="bg-slate-800 rounded-md p-4">
+			<h3 class="text-xl font-extralight">Trusted By These Companies</h3>
+			<TrustedCompaniesContainer />
+		</div>
+	</section>
+	<section id="pricing" class="p-4 text-text-primary bg-primary">
+		<h2 class="text-4xl">Transparent Pricing. Exceptional Value.</h2>
+		<p class="text-xl text-accent-secondary py-2">
+			Invest in solutions that deliver results. Our pricing is designed to grow
+			with your business and provide unmatched ROI.
+		</p>
+		<p class="py-2">
+			We understand that every business has unique needs, which is why we offer
+			flexible pricing tailored to your goals. Whether you're looking for a
+			custom website, seamless integrations, or expert consulting, our solutions
+			are built to scale and deliver measurable results.
+		</p>
+		<p class="font-extralight text-accent-primary text-2xl py-8">
+			No hidden fees, no surprises—just clear pricing for premium services.
+		</p>
+		<div>
+			<PricingContainer client:visible />
+		</div>
+	</section>
+	<section class="" id="cta">
+		<CTA />
+	</section>
+	<section id="news">
+		<BlogContainer client:visible />
+	</section>
+</RootLayout>

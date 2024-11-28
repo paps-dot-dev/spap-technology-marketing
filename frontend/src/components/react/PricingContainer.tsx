@@ -42,17 +42,7 @@ const services = [
 ];
 
 const PricingCarousel = () => {
-	const [currentIndex, setCurrentIndex] = useState(0);
 
-	const nextSlide = () => {
-		setCurrentIndex((prevIndex) => (prevIndex + 1) % services.length);
-	};
-
-	const prevSlide = () => {
-		setCurrentIndex(
-			(prevIndex) => (prevIndex - 1 + services.length) % services.length
-		);
-	};
 
 	return (
 		<div className="relative">

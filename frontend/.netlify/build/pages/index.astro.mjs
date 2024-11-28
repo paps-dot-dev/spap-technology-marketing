@@ -1,6 +1,6 @@
-import { a as createComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute, d as renderComponent } from '../chunks/astro/server_BwxQodTz.mjs';
+import { a as createComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute, d as renderComponent } from '../chunks/astro/server_PaPPHYVh.mjs';
 import 'kleur/colors';
-import { B as Button, a as $$Icon, $ as $$RootLayout } from '../chunks/RootLayout_DYH7LGDT.mjs';
+import { B as Button, a as $$Icon, $ as $$RootLayout } from '../chunks/RootLayout_kaoKhfdV.mjs';
 import 'clsx';
 import { s as supabase } from '../chunks/supabase_C8GpD8xL.mjs';
 import { jsx, jsxs } from 'react/jsx-runtime';
@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 import { MdWeb, MdCode, MdCloud, MdScience, MdArrowBackIosNew, MdArrowOutward } from 'react-icons/md';
 import 'typescript';
 import { FaBullseye, FaLightbulb } from 'react-icons/fa';
-import { $ as $$FeaturedProjectsGrid } from '../chunks/FeaturedProjectsGrid_xwzbQXbW.mjs';
+import { $ as $$FeaturedProjectsGrid } from '../chunks/FeaturedProjectsGrid_BmFyTDkf.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$TrustedCompaniesContainer = createComponent(async ($$result, $$props, $$slots) => {
@@ -294,7 +294,6 @@ const services = [
   }
 ];
 const PricingCarousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
   return /* @__PURE__ */ jsx("div", { className: "relative", children: services.map((service, index) => /* @__PURE__ */ jsxs(
     "div",
     {
