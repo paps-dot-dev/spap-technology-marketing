@@ -4,18 +4,23 @@ import MobileNavLink from './MobileNavLink.astro';
 import { Button } from '@/components/ui/button';
 import SocialMediaButtonGroup from './ui/SocialMediaButtonGroup.astro';
 
-const {links} = Astro.props
+const { links } = Astro.props;
 ---
 
 <div class="flex justify-center items-center">
-	<button class="rounded-full border-2 border-white p-4 group transition hover:border-accent-magenta" id="hamburger-menu"
-		><Icon class="text-xl text-white group-hover:text-accent-magenta" name={'mdi:apps'} /></button
+	<button
+		class="rounded-full border-2 border-white p-4 group transition-all hover:border-accent-primary"
+		id="hamburger-menu"
+		><Icon
+			class="text-xl text-white group-hover:text-accent-primary"
+			name={'mdi:apps'}
+		/></button
 	>
 </div>
 
 <dialog
 	id="mobile-nav"
-	class="h-screen w-screen lg:max-w-screen-xl rounded-xl bg-text-primary text-background-primary"
+	class="h-screen w-screen lg:max-w-screen-xl rounded-xl bg-slate-800 text-text-primary"
 >
 	<div class="flex justify-between items-center p-4">
 		<img
@@ -24,19 +29,23 @@ const {links} = Astro.props
 		/>
 		<button
 			id="close-nav"
-			class="ml-auto block outline-none w-fit text-xl lg:text-4xl hover:text-accent-pop hover:rotate-180 duration-200 ease-linear"
+			class="ml-auto block outline-none w-fit text-3xl lg:text-4xl hover:rotate-180 duration-200 ease-linear hover:text-accent-primary"
 			><Icon name={'mdi:close'} /></button
 		>
 	</div>
 
 	<ul class="flex flex-col items-center gap-16 text-left px-4 mt-8">
-		{links.map((link, index) => {
-			if(link.active) {
-				return <li class="w-full">
-					<MobileNavLink href={link.href} name={link.name} />
-				</li>
-			}
-		})}
+		{
+			links.map((link, index) => {
+				if (link.active) {
+					return (
+						<li class="w-full">
+							<MobileNavLink href={link.href} name={link.name} />
+						</li>
+					);
+				}
+			})
+		}
 		<!--<li class="w-full">-->
 		<!--	<MobileNavLink href="/" name="Home" />-->
 		<!--</li>-->
@@ -56,6 +65,10 @@ const {links} = Astro.props
 		<!--	<SocialMediaButtonGroup color="accent-primary" />-->
 		<!--</li>-->
 	</ul>
+	<div class="mt-16">
+		<p class="text-2xl p-6">Follow Us On Social Media</p>
+		<SocialMediaButtonGroup />
+	</div>
 </dialog>
 
 <script>

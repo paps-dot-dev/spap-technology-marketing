@@ -2,28 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 @layer base {
-  :root {
-    --radius: 0.5rem
-
-  }
+	:root {
+		--radius: 0.5rem;
+	}
 }
 
-*{
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+* {
+	font-family: 'DM Sans', sans-serif;
+	font-weight: 400;
+	font-style: normal;
 }
 
-.bokor-regular {
-  font-family: "Bokor", system-ui;
-  font-weight: 400;
-  font-style: normal;
+h1 {
+	font-family: 'Inter', sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
 }
-.bebas-neue-regular {
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-
-

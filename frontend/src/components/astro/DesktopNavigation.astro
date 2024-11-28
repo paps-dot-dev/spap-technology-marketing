@@ -9,11 +9,12 @@ const { links } = Astro.props;
 				return (
 					<li
 						class={
-							' text-white/25 group hover:text-accent-magenta cursor-pointer'
+							' text-white/25 group hover:text-accent-primary transition-all cursor-pointer group'
 						}>
 						<a href={link.href} class="bokor-regular">
 							{link.name}
 						</a>
+						<div class="group-hover:border-accent-primary border-[1px] border-transparent opacity-0 group-hover:opacity-100  -translate-x-32 group-hover:translate-x-0 transition-all duration-400" />
 					</li>
 				);
 			}

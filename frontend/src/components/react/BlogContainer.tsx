@@ -39,11 +39,57 @@ const BlogContainer = () => {
 	}, []);
 
 	return (
-		<section>
-			<h2 className={'bokor-regular text-5xl border-b-2 w-fit mb-8'}>
-				Recent Articles
+		<section className="p-4 text-text-primary bg-primary lg:py-32">
+			<h2 className={'text-4xl lg:text-5xl mb-8'}>
+				Insights from SPAP Technology
 			</h2>
-
+			<p className="lg:text-2xl lg:max-w-[50%]">
+				Stay ahead of the curve with insights straight from SPAP Technology. Our
+				blog, Riffs. Code. Coffee., delivers fresh takes on the latest tech
+				trends, innovative tools, and creative strategies to help your business
+				thrive.
+			</p>
+			<p className="my-8 lg:text-xl">
+				From deep dives into cutting-edge technology to practical advice for
+				scaling your business tech stack, we're here to spark inspiration in
+				creative entrepreneurs.
+			</p>
+			{posts.total_results > 0 ? (
+				<div className="lg:overflow-x-auto">
+					<ul className="flex flex-col lg:flex-row lg:inline-flex gap-8">
+						{posts.data?.map(
+							(post: {
+								id: string;
+								web_url: string;
+								thumbnail_url: string;
+								title: string;
+							}) => (
+								<motion.li
+									initial={{ translateX: -100 }}
+									animate={{ translateX: 0 }}
+									className="lg:w-full  lg:inline-block lg:min-w-[300px] relative rounded-xl group bg-primary"
+									key={post.id}>
+									<a target={'_blank'} href={post.web_url}>
+										<img
+											className="w-full object-cover rounded-xl opacity-30 group-hover:opacity-100 transition"
+											src={post.thumbnail_url}
+											alt={post.title}
+										/>
+										<div className="absolute bottom-0 z-20 p-8 w-full">
+											<p className="text-2xl group-hover:text-accent-primary">
+												{post.title}
+											</p>
+										</div>
+									</a>
+								</motion.li>
+							)
+						)}
+					</ul>
+				</div>
+			) : (
+				<p>No blog posts found.</p>
+			)}
+			{/* 
 			{posts.total_results > 0 ? (
 				<ul className={'flex flex-wrap gap-8'}>
 					{posts.data?.map(
@@ -56,7 +102,7 @@ const BlogContainer = () => {
 							<motion.li
 								initial={{ translateX: -100 }}
 								animate={{ translateX: 0 }}
-								className="w-96 relative rounded-xl group bg-primary"
+								className="w-full lg:max-w-screen-sm relative rounded-xl group bg-primary"
 								key={post.id}>
 								<a target={'_blank'} href={post.web_url}>
 									<img
@@ -65,7 +111,7 @@ const BlogContainer = () => {
 										alt={post.title}
 									/>
 									<div className={'absolute bottom-0 z-20 p-8 w-3/4'}>
-										<p className={'text-2xl group-hover:text-accent-magenta'}>
+										<p className={'text-2xl group-hover:text-accent-primary'}>
 											{post.title}
 										</p>
 									</div>
@@ -76,7 +122,7 @@ const BlogContainer = () => {
 				</ul>
 			) : (
 				<p>No blog posts found.</p>
-			)}
+			)} */}
 		</section>
 	);
 };

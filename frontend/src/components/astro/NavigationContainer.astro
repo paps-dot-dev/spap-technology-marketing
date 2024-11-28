@@ -1,16 +1,16 @@
 ---
 import MobileNavigation from '../astro/MobileNavigation.astro';
 import { Button } from '../ui/button';
-import DesktopNavigation from "./DesktopNavigation.astro";
-import {navigationLinks} from "../../lib/navigation";
+import DesktopNavigation from './DesktopNavigation.astro';
+import { navigationLinks } from '../../lib/navigation';
 ---
 
 <nav class="px-4 py-8">
 	<div class="flex items-center justify-between">
 		<a href="/">
 			<img
-				class="max-w-10 opacity-20  object-cover hover:opacity-100"
-				src='https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/branding/logos/SPAP%20Logos/Icon/PNG/White_Icon%20Lockup_SPAP.png'
+				class="max-w-10 opacity-20 object-cover hover:opacity-100 transition-all hover:-rotate-12"
+				src="https://iiyjiikbtsckevydbcsj.supabase.co/storage/v1/object/public/website-assets/branding/logos/SPAP%20Logos/Icon/PNG/White_Icon%20Lockup_SPAP.png"
 			/>
 		</a>
 		<div class="hidden md:block">
@@ -18,15 +18,14 @@ import {navigationLinks} from "../../lib/navigation";
 		</div>
 
 		<div class="flex items-center gap-2">
-
 			<a href="/contact"
-				><Button className="md:p-6 md:px-8" variant="outline">contact me</Button
+				><Button className="md:p-6 md:px-8" variant="outline">contact us</Button
 				></a
 			>
-			<div class="md:hidden">
-			<MobileNavigation links={navigationLinks} />
-			</div>
 
+			<div class="md:hidden">
+				<MobileNavigation links={navigationLinks} />
+			</div>
 		</div>
 	</div>
 </nav>

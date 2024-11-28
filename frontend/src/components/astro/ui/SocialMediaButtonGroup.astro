@@ -14,20 +14,18 @@ const socialMediaLinks = [
 		id: 2,
 		name: 'Instagram',
 		iconRef: 'mdi:instagram',
-		href: 'https://instagram.com/shawn.paps',
+		href: 'https://instagram.com/shawnpaps.dev',
 	},
 	{
 		id: 3,
-		name: 'X',
-		iconRef: 'arcticons:x-twitter',
-		href: 'https://x.com/shawn_paps',
+		name: 'BlueSky',
+		iconRef: 'arcticons:bluesky',
+		href: 'https://bsky.app/profile/shawnpaps.dev',
 	},
 ];
 ---
 
-<div
-	class="flex justify-between items-center mr-auto lg:mx-auto space-x-2 md:space-x-8 lg:order-3"
->
+<div class="flex flex-col items-end p-4 space-y-4">
 	{
 		socialMediaLinks.map((item) => (
 			<SocialMediaButton color={color} key={item.id} buttonData={item} />

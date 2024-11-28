@@ -1,4 +1,4 @@
-import { c as createAstro, a as createComponent, r as renderTemplate, d as renderComponent, m as maybeRenderHead, b as addAttribute } from '../../../chunks/astro/server_DfnRGx3A.mjs';
+import { c as createAstro, a as createComponent, r as renderTemplate, d as renderComponent, m as maybeRenderHead, b as addAttribute } from '../../../chunks/astro/server_BwxQodTz.mjs';
 import 'kleur/colors';
 import { s as supabase } from '../../../chunks/supabase_C8GpD8xL.mjs';
 /* empty css                                         */
@@ -6,7 +6,7 @@ import { jsxs, jsx } from 'react/jsx-runtime';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MdArrowDownward } from 'react-icons/md';
-import { $ as $$RootLayout, a as $$Icon } from '../../../chunks/RootLayout_DA6riOg4.mjs';
+import { a as $$Icon, $ as $$RootLayout } from '../../../chunks/RootLayout_DYH7LGDT.mjs';
 export { renderers } from '../../../renderers.mjs';
 
 const ProjectDetailsDropdown = ({

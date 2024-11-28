@@ -6,11 +6,11 @@ export const navigationLinks = [
 	},
 	{
 		name: 'About',
-		href: '/about',
-		active: false,
+		href: '/#about',
+		active: true,
 	},
 	{
-		name: 'Web Solutions',
+		name: 'Solutions',
 		href: '/projects/web',
 		active: true,
 	},
@@ -18,11 +18,11 @@ export const navigationLinks = [
 	{
 		name: 'Pricing',
 		href: '/#pricing',
-		active: false,
+		active: true,
 	},
 	{
 		name: 'Newsletter',
-		href: '/#newsletter',
+		href: '/#news',
 		active: true,
 	},
 	{
